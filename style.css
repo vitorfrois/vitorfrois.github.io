@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --light-color: hsl(0, 0%, 90%);
+    --dark-color: hsl(225, 6%, 12%);
+    --accent-color: hsl(335, 100%, 82%);
+    --primary-font: 'Inter', sans-serif;    
+    font-size: calc(10px + 0.33vw)
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-family: var(--primary-font);
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);    
+    transition: width 300ms;
+}
+
+a:hover::after, a:focus::after {
+    width: 100%;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 1.8rem 0;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.015rem;
+    line-height: 1.8rem;
+}
+
+span {
+    font-size: 2.75rem;
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 0 5vw;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+    span {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 300px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+    span {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+}
