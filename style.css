@@ -4,10 +4,10 @@
 }
 
 :root {
-    --light-color: hsl(0, 0%, 90%);
-    --dark-color: hsl(225, 6%, 12%);
-    --accent-color: hsl(335, 100%, 82%);
-    --primary-font: 'Inter', sans-serif;    
+    --light-color: hsl(315, 100%, 96%);
+    --dark-color: hsl(0, 0%, 7%);
+    --accent-color: hwb(192 0% 2%);
+    --primary-font: 'Cutive Mono', mono;    
     font-size: calc(10px + 0.33vw)
 }
 
@@ -45,15 +45,15 @@ a:hover::after, a:focus::after {
     width: 100%;
 }
 
-h1 {
-    font-size: 3.5rem;
-    margin: 1.8rem 0;
-    color: #fff;
+h3 {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+    color: var(--light-color);
 }
 
 h2 {
     font-size: 2rem;
-    color: #fff;
+    color: var(--light-color);
 }
 
 p {
