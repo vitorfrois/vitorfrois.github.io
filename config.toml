@@ -7,11 +7,11 @@
 # Astatine (see https://github.com/hugcis/hugo-astatine-theme).
 #
 # The URL from which the site will be served
-baseurl = "https://hugcis.github.io/hugo-astatine-theme/"
+baseurl = "https://vitorfrois.github.io/"
 # Language used
 languageCode = "en-us"
 # Website title
-title = "Astatine Theme"
+title = "Vítor Fróis"
 # Theme used
 theme = "hugo-astatine-theme"
 
