@@ -11,7 +11,8 @@ baseurl = "https://vitorfrois.github.io/"
 # Language used
 languageCode = "en-us"
 # Website title
-title = "Vítor Fróis"
+title = "Vítor Fróis Homepage"
+
 # Theme used
 theme = "hugo-astatine-theme"
 
@@ -35,37 +36,39 @@ pygmentsStyle = "native"
     page = "/:slug/"
 
 # Configure main navbar links. They can have a weight to select the order.
+[[menu.main]]
+    name = "homepage"
+    url = "/"
+    weight = -200
+
 # This links to content within the content/post/ folder
 [[menu.main]]
-    name = "Posts"
+    name = "posts"
     url = "/post/"
     weight = -150
 
 # This links to the page about.md
 [[menu.main]]
-    name = "About"
+    name = "about"
     url = "/about/"
     weight = -110
 
 # Make the tags and categories pages accessible directly from the navbar.
 [[menu.main]]
-    name = "Tags"
+    name = "tags"
     url = "/tags/"
     weight = -120
 
-[[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = -130
+[site]
+    title = 'vitor frois homepage'
 
 # Site wide params and SEO
 [params]
     # Site description. Individual pages can have descriptions too but if
     # missing it will fallback to that one.
-    description = """The homepage of Astatine. This website is a demo the of the \
-    Hugo theme Astatine."""
+    description = """Vítor Fróis Homepage and Blog"""
     # Author of the site
-    authorName = "Jack Harkness"
+    authorName = "vitor frois"
     # Main image for the author. This will be the default image for SEO.
     [params.imgname]
         name = "img/main.jpg"
@@ -76,8 +79,6 @@ pygmentsStyle = "native"
     # hostedKaTex = false
 
     # Optional: add a twitter handle and mastodon handle for SEO.
-    # [params.twitter]
-        # name = "@Jack_harkness"
     # [params.mastodon]
         # name = "@jkharkness"
         # host = "mastodon.social"

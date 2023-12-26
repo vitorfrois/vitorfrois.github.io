@@ -1,7 +1,8 @@
 ---
 # === Required fields  ===
 # Your name 
-name: "Vítor Fróis"
+# title: "Vítor Fróis"
+name: "vitor frois"
 # Your profile picture
 imgname: 
   name: "img/main.jpg"
@@ -15,14 +16,14 @@ imgname:
 #     type: $IMAGE_TYPE
 # ...
 # A title (job title or "Researcher", "PhD student", etc.)
-personal_title: "Chess, Python and Coffee"
+personal_title: "chess, python and coffee"
 # An address (you can list multiple)
 address: 
   - 
     name: Undergrad & Research Intern
     street: University of São Paulo
-    postal_code: "000000"
-    locality: Earth
+    postal_code: São Carlos
+    locality: SP
     email: frois@usp.br
     emailImg: 
       dark: /img/dark_email.png

@@ -1,6 +1,6 @@
 +++
-title = "Creating a Chess Bot with Data Science"
-date = "2023-12-25"
+title = "Creating a Chess Bot"
+date = "2023-12-26"
 draft = false
 slug = 'pyrarucu'
 tags = ['Machine Learning', 'Artificial Inteligence', 'Chess', 'Bot']
