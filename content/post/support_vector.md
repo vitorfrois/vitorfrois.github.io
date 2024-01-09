@@ -121,11 +121,13 @@ $$
 k(u,v)=\exp{(-\lambda ||\vec{u} \cdot \vec{v}||)}
 $$
 
-There are lots of different kernels you can possibly test and use.
+There are [lots of different kernels](https://github.com/gmum/pykernels) you can possibly test and use.
 
 ### References
 - [Patrick Winston Lecture on SVM](https://www.youtube.com/watch?v=_PwhiWxHK8o)
 - [RBF kernel as a projection into infinite dimensions](https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf)
+- [SkLearn SVM](https://scikit-learn.org/stable/modules/svm.html)
+- [PyKernels](https://github.com/gmum/pykernels)
 - [StatQuest on SVM](https://www.youtube.com/watch?v=efR1C6CvhmE&)
 - [Smola's Tutorial on SVR](http://i2pc.es/coss/Docencia/SignalProcessingReviews/Smola2004.pdf)
 - [Support Vector Regression Machines](https://proceedings.neurips.cc/paper_files/paper/1996/file/d38901788c533e8286cb6400b40b386d-Paper.pdf)
