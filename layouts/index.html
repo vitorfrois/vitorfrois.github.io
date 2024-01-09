@@ -1,4 +1,5 @@
 {{ define "main" }}
+    {{ partial "head.html" . }}
     {{ partial "info.html" . }}
     {{ .Content }}
     {{ with .Params.Publications }}

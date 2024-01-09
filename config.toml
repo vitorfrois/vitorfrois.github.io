@@ -76,7 +76,7 @@ pygmentsStyle = "native"
         alt = "Profile picture"
 
     # Indicate if you host Katex yourself. Defaults to using the CDN KaTex.
-    # hostedKaTex = false
+    hostedKaTex = false
 
     # Optional: add a twitter handle and mastodon handle for SEO.
     # [params.mastodon]
