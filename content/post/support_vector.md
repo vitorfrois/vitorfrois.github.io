@@ -1,0 +1,121 @@
++++
+title = "Support Vectors"
+date = "2024-01-08"
+draft = false
+slug = 'sv'
+tags = ['Machine Learning', 'Support Vectors']
+headline = 'A short introduction about a very useful ideia in Machine Learning'
+readingtime = true
++++
+
+Support Vectors are definetly one of my favorite ideias in Machine Learning, it is such a simple concept, but when combined with some math, turns into a powerful tool. Vladimir Vapnik came with the ideia of Support Vectors in the middle of the 60's, but only in 1992 a group of scientists shown that the kernel trick could transform the linear model in a nonlinear one.
+
+## Support Vector Machines
+Suppose that two linear separable classes lies in a space. To create a model, we should find the best way to draw such a separation. Decision trees, neural networks came with theier own ideia, but Support Vector Machines (SVM) looks not for a line, but a lane that best does that separation.
+
+That lane has two gutters in a way we want to maximize the distance between them.
+
+### Decision Rule
+Let $\vec{w}$ be a vector perpendicular to the lane and consider we want to classify an unknown example $\vec{u}$.
+Our goal is to check if $\vec{u}$ belongs to the right or left side of the street. To achieve so, we should project $\vec{u}$ on $\vec{w}$
+
+Thus, to classify $\vec{u}$ as class 1 or class 2, we should check if $\vec{w} \vec{u} \ge c$, where $c$ is a constant. Considering $c=-b$, we can finally write a decision rule:
+
+> If $\vec{w} \vec{u} + b \ge 0$ then $\vec{u}$ belongs to class 1.
+
+So good so far. But we still do not know which constant to use, so we can introduce some constraints and calculate $\vec{w}$ and $b$.
+Consider $x_1$, $x_2$ a class 1 and 2 vector sample respectvely. 
+$$
+\begin{equation}
+\begin{cases}
+    \vec{w} \vec{x_1} + b \ge 1 \\
+    \vec{w} \vec{x_2} + b \le 1
+\end{cases}
+\end{equation}
+$$
+
+And to standartize $x$ on both equations we introduce $y$ such that 
+$$
+\begin{equation}
+\begin{cases}
+    x_1 \implies y_i = 1 \\
+    x_2 \implies y_i = -1
+\end{cases}
+\end{equation}
+$$
+Rewriting (1) with $y_1$ on both sides gives the same equation
+$$
+    y_i (\vec{w} \vec{x_i} + b) \ge 1 
+$$
+
+Notice that samples that lies on the gutters of the street have
+$$
+    y_i (\vec{w} \vec{x_i} + b) = 1
+$$
+
+## Calculating the widest lane
+Knowing the equality for samples on the gutters, we can find the width of the lane by projecting the diff vector (difference between each class representant on the gutter) by normalized vector perpendicular to the lane.
+
+The perpendicular vector we search for is $\dfrac{\vec{w}}{||\vec{w}||}$, and the diff is $(x_1 - x_2)$. Then, the lane width is given by $width = \dfrac{\vec{w}}{||\vec{w}||}(x_1 - x_2)$
+
+Remembering (1) for samples on the gutters, we have 
+$$
+\begin{equation}
+\begin{cases}
+    \vec{x_1} = \dfrac{1 - b}{\vec{w}} \\
+    \vec{x_2} = - \dfrac{1 - b}{\vec{w}}
+\end{cases}
+\end{equation}
+$$
+Substituing on width formula
+$$
+    width = \dfrac{\vec{w}}{||\vec{w}||}(\dfrac{1 - b}{\vec{w}} + \dfrac{1 - b}{\vec{w}}) \\
+    width = \dfrac{2}{||\vec{w}||}
+$$
+We want to maximize the width, this is, we want to maximize $\dfrac{2}{||\vec{w}||}$. In a more convenient way, say that we want to minimize $\dfrac{1}{2}||\vec{w}||^2$.
+Now we're half way there.
+
+## Optimizing with the Lagrangian
+In order to minimize $\dfrac{1}{2}||\vec{w}||^2$ with constraints $y_i (\vec{w} \vec{x_i} + b) - 1 \ge 0$ we can use Lagrangian Multipliers (we should've learned that in Calculus II).
+The Lagrangian is an expression of the form $L(x, \lambda) = f(x) - \lambda g(x)$. And the maximum show up when we take the partial derivatives and equal them to 0. Let's see
+$$
+    L = \dfrac{1}{2}||\vec{w}||^2 - \sum^l a_i (y_i (\vec{x_i}\vec{w} + b) - 1) 
+$$
+The summation iterates over the sample set $l$ and represents the function $g$. Taking the partials, we obtain
+$$
+\dfrac{\partial{L}}{\partial{\vec{w}}} = \vec{w} - \sum^l a_i y_i \vec{x_i} = 0 \implies \vec{w} = \sum^l a_i y_i \vec{x_i} \\
+
+\dfrac{\partial{L}}{\partial{b}} = \sum^l a_i y_i
+$$
+
+Summarizing, we discovered that vector $\vec{w}$ is a linear combination of the samples. Going further, we can substitute the obtained expressions into $L$.
+$$
+L = \dfrac{1}{2}(\sum^l a_i y_i \vec{x_i}) (\sum^l a_j y_j \vec{x_j}) - (\sum^l a_i y_i \vec{x_i}) (\sum^l a_j y_j \vec{x_j}) + \sum^l a_i \\
+L = \sum^l a_i - \dfrac{1}{2}(\sum^l a_i a_j y_i y_j \vec{x_i} \vec{x_j})
+$$
+
+Finally! A analyst could be able to calculate the maximum of this expression, but most importantly, we discovered that **the optimization depends only on the dot product of pairs of samples**. In a similar way, the decision rule also depends only on the dot product of the unknown vector and the samples vectors.
+
+### Note
+It is possible to prove that the Lagragian gives a convex space, that is, the local maxima is also the global one.
+
+After all these calculations Vapnik certainly hesitated a little and think if he was going in the right direction. Only almost 30 years later, researchers found the ideia of a kernel, allowing the model to surpass linearity.
+
+## Kernel
+A general way to deal with linearity of a vector $\vec{u}: \R^m$ is to create a function $\phi(x): \R^m \rarr \R^n$ with $n \ge m$ where the new coordinates $\phi(u)$ will be given by non-linear functions. This process can be very heavy to process, especially in numerous dimensions.
+
+But, in SVM, optimizing and classifying only need the result of $a\cdot b$ or $\phi(u)\cdot \phi(v)$. And there the Kernel Trick appears! We do not actually need a $\phi$ function, we just a function that gives the result of $\phi(u)\phi(v)$. This function is called the kernel function, and is represented by $k$.
+
+$$
+k(u,v)=\phi(u)\phi(v)
+$$
+
+### Polynomial Kernel
+$$k(u,v)=( \vec{u} \cdot \vec{v} + 1)^n$$
+Gives the relation between a and b in $n$ dimensions.
+
+### Radial Basis Function Kernel
+What is so special about Radial Basis Function (RBF), is that it generalizes the Polynomial Kernel and gives the relation between these two vectors in infinite dimensions $k_{RBF}: R^m\rarr R^\infty$
+$$
+k(u,v)=\exp{(-\lambda ||\vec{u} \cdot \vec{v}||)}
+$$
