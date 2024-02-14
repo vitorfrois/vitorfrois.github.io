@@ -128,6 +128,7 @@ There are [lots of different kernels](https://github.com/gmum/pykernels) you can
 - [RBF kernel as a projection into infinite dimensions](https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf)
 - [SkLearn SVM](https://scikit-learn.org/stable/modules/svm.html)
 - [PyKernels](https://github.com/gmum/pykernels)
+- [The Kernel Cookbook](https://www.cs.toronto.edu/~duvenaud/cookbook/)
 - [StatQuest on SVM](https://www.youtube.com/watch?v=efR1C6CvhmE&)
 - [Smola's Tutorial on SVR](http://i2pc.es/coss/Docencia/SignalProcessingReviews/Smola2004.pdf)
 - [Support Vector Regression Machines](https://proceedings.neurips.cc/paper_files/paper/1996/file/d38901788c533e8286cb6400b40b386d-Paper.pdf)
