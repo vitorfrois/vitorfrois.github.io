@@ -11,7 +11,7 @@ baseurl = "https://vitorfrois.github.io/"
 # Language used
 languageCode = "en-us"
 # Website title
-title = "Vítor Fróis Homepage"
+Title = "vitor frois"
 
 # Theme used
 theme = "hugo-astatine-theme"
@@ -36,11 +36,6 @@ pygmentsStyle = "native"
     page = "/:slug/"
 
 # Configure main navbar links. They can have a weight to select the order.
-[[menu.main]]
-    name = "homepage"
-    url = "/"
-    weight = -200
-
 # This links to content within the content/post/ folder
 [[menu.main]]
     name = "posts"

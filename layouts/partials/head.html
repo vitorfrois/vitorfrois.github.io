@@ -4,7 +4,7 @@
 <title>{{ .Site.Title }}</title>
 <meta property="og:title" content="{{ .Site.Title }}">
 {{- else if .Title -}}
-<title>{{ .Title }} - {{ .Site.Title }}</title>
+<title>{{ .Title }} {{ .Site.Title }}</title>
 <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
 {{- else -}}
 <title>{{ .Section | humanize }} - {{ .Site.Title }}</title>
@@ -72,10 +72,7 @@
 {{ $style := resources.Get "css/style.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <!-- Icon configuration -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico"/>
 <link rel="manifest" href="/site.webmanifest">
 <link href="{{ .Site.BaseURL }}index.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
 <meta name="theme-color" content="#ffffff">
