@@ -133,3 +133,4 @@ There are [lots of different kernels](https://github.com/gmum/pykernels) you can
 - [Smola's Tutorial on SVR](http://i2pc.es/coss/Docencia/SignalProcessingReviews/Smola2004.pdf)
 - [Support Vector Regression Machines](https://proceedings.neurips.cc/paper_files/paper/1996/file/d38901788c533e8286cb6400b40b386d-Paper.pdf)
 - [Vladimir Vapnik on Wikipedia](https://en.wikipedia.org/wiki/Vladimir_Vapnik)
+- https://www.svms.org/
