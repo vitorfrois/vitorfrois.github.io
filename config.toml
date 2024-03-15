@@ -42,17 +42,24 @@ pygmentsStyle = "native"
     url = "/post/"
     weight = -150
 
+# Make the tags and categories pages accessible directly from the navbar.
+[[menu.main]]
+    name = "tags"
+    url = "/tags/"
+    weight = -130
+
+
+[[menu.main]]
+    name = "resume"
+    url = "/resume/"
+    weight = -120
+
 # This links to the page about.md
 [[menu.main]]
     name = "about"
     url = "/about/"
     weight = -110
 
-# Make the tags and categories pages accessible directly from the navbar.
-[[menu.main]]
-    name = "tags"
-    url = "/tags/"
-    weight = -120
 
 [site]
     title = 'vitor frois homepage'
