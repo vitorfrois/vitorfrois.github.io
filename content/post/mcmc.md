@@ -1,6 +1,6 @@
 +++
-title: "Monte Carlo Markov Chains and the Metropolis Algorithm"
-date: "2024-07-18"
+title = "Monte Carlo Markov Chains and the Metropolis Algorithm"
+date = "2024-07-18"
 draft = false
 slug = 'mcmc'
 categories = ['Statistics', 'Monte Carlo', 'Metropolis', 'Markov Chains']
@@ -101,6 +101,11 @@ $$
 A(a \rarr b) = max(1, \frac{f(b)}{f(a)}) = max(1, \frac{p(b)}{p(a)})
 $$
 
-## Applications
+## Applications and conclusions
 
-MCMC is widely used for approximating numerical solutions for integrals and draw posterior samples in bayesian inference. Metropolis algorithm is widely used in simulations, and I pretend to follow this post with an example of its usage in the Ising model simulation.
+MCMC is widely used for approximating numerical solutions for integrals and draw posterior samples in bayesian inference. Metropolis algorithm is widely used in simulations, and I pretend to follow this post with an example of its usage and implementation in the Ising model simulation.
+
+## References
+- [Data Witch Metropolis Hastings](https://blog.djnavarro.net/posts/2023-04-12_metropolis-hastings/)
+- [ritvikmath Metropolis-Hastings](https://www.youtube.com/watch?v=yCv2N7wGDCw)
+- [Michael Pyrcz MCMC](https://www.youtube.com/watch?v=7QX-yVboLhk)
