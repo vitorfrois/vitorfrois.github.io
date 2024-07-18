@@ -31,10 +31,10 @@ Lets say we want to discover the probability of sunny P(S) and rainy P(R) days a
 
 $$
 \begin{equation}
-P(S_{t+1}|R_t) = 0.5 \\\
-P(R_{t+1}|R_t) = 0.5 \\\
-P(R_{t+1}|S_t) = 0.1 \\\
-P(S_{t+1}|S_t) = 0.9 \\\
+    P(S_{t+1}|R_t) = 0.5 \\\
+    P(R_{t+1}|R_t) = 0.5 \\\
+    P(R_{t+1}|S_t) = 0.1 \\\
+    P(S_{t+1}|S_t) = 0.9 \\\
 \end{equation}
 $$
 
