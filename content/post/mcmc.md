@@ -3,14 +3,11 @@ title = "Monte Carlo Markov Chains and the Metropolis Algorithm"
 date = "2024-07-18"
 draft = false
 slug = 'mcmc'
-categories = ['Statistics', 'Monte Carlo', 'Metropolis', 'Markov Chains']
+tags = ['Statistics', 'Monte Carlo', 'Metropolis', 'Markov Chains']
 headline = 'As a person born in the city of Montes Claros, I am a bit confused every time I read the name Monte Carlo. It is pretty useful though.'
 readingtime = false
+katex = true
 +++
-
-# Monte Carlo Markov Chains and the Metropolis Algorithm
-
-As a person born in the city of Montes Claros, I am a bit confused every time I read the name Monte Carlo.
 
 ## ~~Montes Claros~~ Monte Carlo method
 
