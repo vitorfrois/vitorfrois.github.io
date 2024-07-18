@@ -31,13 +31,12 @@ Lets say we want to discover the probability of sunny P(S) and rainy P(R) days a
 
 $$
 \begin{equation}
+\begin{cases}
 P(S_{t+1}|R_t) = 0.5 \\\
-
 P(R_{t+1}|R_t) = 0.5 \\\
-
 P(R_{t+1}|S_t) = 0.1 \\\
-
 P(S_{t+1}|S_t) = 0.9 \\\
+\end{cases}
 \end{equation}
 $$
 
@@ -46,27 +45,29 @@ The system is irreducible (there is a single communicating state - or I can reac
 ## Metropolis Algorithm
 MCMC are only a class of methods that have diverse implementations. One of the most common implemetations is the Metropolis Algorithm. 
 
-Lets remember our objective is to sample from a unknown distribution, lets call it \\(p(x)$. We want to estimate it given a similar distribution \\(f(x)\\) where they differ only by a constant, this is \\(p(x)=f(x)/C$.
-MCMC suggests that after some **burn-in** steps (these are like steps until we get in track), we will be sampling from \\(p(x)$.
+Lets remember our objective is to sample from a unknown distribution, lets call it \\(p(x)\\). We want to estimate it given a similar distribution \\(f(x)\\) where they differ only by a constant, this is \\(p(x)=f(x)/C\\).
+MCMC suggests that after some **burn-in** steps (these are like steps until we get in track), we will be sampling from \\(p(x)\\).
 
 $$
 \begin{equation}
+\begin{cases}
 X_0 \rarr X_1 \rarr ... \rarr X_n \rarr X_{n+1} \\\
 \text{Burn-In | p(x) samples}
+\end{cases}
 \end{equation}
 $$
 
-Looks easy. Below, we will see that given a state \\(a\\) and a candidate \\(b$, we **should** go from \\(a\\) to \\(b\\) if \\(b\\) is more probable. And if the state \\(b\\) is less probable, we **maybe** can go, according to the acceptance probability. 
+Looks easy. Below, we will see that given a state \\(a\\) and a candidate \\(b\\), we **should** go from \\(a\\) to \\(b\\) if \\(b\\) is more probable. And if the state \\(b\\) is less probable, we **maybe** can go, according to the acceptance probability. 
 
 ### 1. Sample from an easier distribution \\(g$
-Normal looks fine. Lets compute \\(g(x_{t+1}|x_t) = N(x_t, \sigma ^2 )$.\\(g(x_{t+1}|x_t)\\) is not our definite next step. Actually, we need to compute an acceptance probability.
+Normal looks fine. Lets compute \\(g(x_{t+1}|x_t) = N(x_t, \sigma ^2 )\\).\\(g(x_{t+1}|x_t)\\) is not our definite next step. Actually, we need to compute an acceptance probability.
 
 ### 2. Accept (or not) the sample
 Call the acceptance probability \\(A(x_t \rarr x_{t+1})\\) and the transition probability  \\(T(x_t \rarr x_{t+1})$
 
 If the so called detailed balanced equation
 $\\) p(a)T(a \rarr b) = p(b)T(b \rarr a)$$
-is true, then it should be garanteed that MCMC converges to our \\(p(x)$. 
+is true, then it should be garanteed that MCMC converges to our \\(p(x)\\). 
 
 We have to substitute \\(p(x)\\) in the equation and the transition probability by the probability of proposing the state change and probability of accepting. It follows:
 $$
@@ -96,7 +97,7 @@ $$
 $$
 
 ### 3. Metropolis case
-In the metropolis case (differently from the Metropolis-Hastings algorithm ),\\(g\\) is a simmetric probability distribution - a Gaussian e.g. Then ,\\(g(a|b) = g(b|a)$, allowing us to rewrite the acceptance function as
+In the metropolis case (differently from the Metropolis-Hastings algorithm ),\\(g\\) is a simmetric probability distribution - a Gaussian e.g. Then ,\\(g(a|b) = g(b|a)\\), allowing us to rewrite the acceptance function as
 
 $$
 A(a \rarr b) = max(1, \frac{f(b)}{f(a)}) = max(1, \frac{p(b)}{p(a)})
