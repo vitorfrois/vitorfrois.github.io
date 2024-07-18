@@ -38,8 +38,7 @@ P(R_{t+1}|R_t) = 0.5 \\\
 P(R_{t+1}|S_t) = 0.1 \\\
 
 P(S_{t+1}|S_t) = 0.9 \\\
-\end{equation}\begin{equation}
-
+\end{equation}
 $$
 
 The system is irreducible (there is a single communicating state - or I can reach any state out of anywhere) and aperiodic (there is non defined pattern for visiting states). Here, we begin at a random state and randomly walk through the Markov Chain. At an infinitely high number of states we obtain a stationary distribution \\(\pi\\) with \\(\pi(S)=0.833\\) and \\(\pi(S)=0.166\\) 
@@ -54,7 +53,7 @@ $$
 \begin{equation}
 X_0 \rarr X_1 \rarr ... \rarr X_n \rarr X_{n+1} \\\
 \text{Burn-In | p(x) samples}
-\begin{equation}
+\end{equation}
 $$
 
 Looks easy. Below, we will see that given a state \\(a\\) and a candidate \\(b$, we **should** go from \\(a\\) to \\(b\\) if \\(b\\) is more probable. And if the state \\(b\\) is less probable, we **maybe** can go, according to the acceptance probability. 
