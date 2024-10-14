@@ -33,9 +33,11 @@ module.exports = {
         'tp-black': 'rgba(0,0,0,.8)',
       },
       fontFamily: {
-        sans: ["-apple-system", "BlinkMacSystemFont", "avenir next", "avenir",
+        sans: ["Computer Modern Bright", 
+               "-apple-system", "BlinkMacSystemFont", "avenir next", "avenir",
                "segoe ui", "helvetica neue", "helvetica",
                "Cantarell", "Ubuntu", "roboto", "noto", "arial", "sans-serif"],
+        
       },
       gridTemplateColumns: {
         'nav': 'repeat(auto-fill, minmax(80px, 1fr))',

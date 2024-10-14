@@ -51,7 +51,7 @@ pygmentsStyle = "native"
 
 [[menu.main]]
     name = "resume"
-    url = "/resume/"
+    url = "/resume/resume.pdf"
     weight = -120
 
 # This links to the page about.md
@@ -78,7 +78,7 @@ pygmentsStyle = "native"
         alt = "Profile picture"
 
     # Indicate if you host Katex yourself. Defaults to using the CDN KaTex.
-    hostedKaTex = false
+    hostedKaTex = true
 
     # Optional: add a twitter handle and mastodon handle for SEO.
     # [params.mastodon]
