@@ -6,6 +6,7 @@ slug = 'statistical-mechanics'
 categories = ['notes']
 tags = ['physics', 'ising', 'phase transition']
 headline = 'Notes taken on Leonard Susskind Statistical Mechanics class'
+katex = true
 readingtime = true
 +++
 
@@ -42,9 +43,11 @@ $$
 The Boltzmann distribution is found by minimizing entropy with respect to some constraints. It describes a system in equilibrium.
 
 $$
-- S(P_i) = \sum_i \log P_i = F(P_i)
+-S(P_i) = \sum_i \log P_i = F(P_i)
 $$
+
 with respect to 
+
 $$
 \sum_i P_i = 1 \text{ and } \sum_i P_iE_i = \langle E \rangle
 $$
