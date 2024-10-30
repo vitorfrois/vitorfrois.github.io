@@ -87,7 +87,7 @@ The Lagrangian is an expression of the form $L(x, \lambda) = f(x) - \lambda g(x)
 $$
     L = \dfrac{1}{2}||\vec{w}||^2 - \sum_l a_i (y_i (\vec{x_i}\vec{w} + b) - 1) 
 $$
-The summation iterates over the sample set $l$ and represents the function $g$. Note that $\frac{\partial ||\vec{w}||}{\partial \vec{w}} = \frac{\vec{w}}{||\vec{w}||}$ Taking the partials, we obtain
+We introduce multiplicative $\alpha s$ for each constraint. The summation iterates over the sample set $l$ and represents the function $g$. Note that $\frac{\partial ||\vec{w}||}{\partial \vec{w}} = \frac{\vec{w}}{||\vec{w}||}$ Taking the partials, we obtain
 $$
 \dfrac{\partial{L}}{\partial{\vec{w}}} = \vec{w} - \sum_l a_i y_i \vec{x_i} = 0 \implies \vec{w} = \sum_l a_i y_i \vec{x_i} \\\
 \dfrac{\partial{L}}{\partial{b}} = \sum_l a_i y_i = 0
@@ -107,7 +107,9 @@ We can plug the obtained lane vector $\vec{w} = \sum_l a_i y_i \vec{x_i}$ to fin
 
 In a similar way, the **decision rule also depends only on the dot product of the unknown vector and the samples vectors**.
 
-**Note:** It is possible to prove that the Lagragian gives a convex space, that is, the local maxima is also the global one.
+**Note 1:** It is possible to prove that the Lagragian gives a convex space, that is, the local maxima is also the global one.
+
+**Note 2:** the constraints $\alpha_i \ne 0$ are going to be the ones related to samples that lie on the gutter of the street.
 
 After all these calculations Vapnik certainly hesitated a little and think if he was going in the right direction. Only almost 30 years later, researchers found the ideia of a kernel, allowing the model to surpass linearity.
 
@@ -141,7 +143,7 @@ $$
 where $\vec{\alpha}$ solves
 $$
 \begin{cases}
-\max_{\vec{\alpha}} 
+\argmax_{\vec{\alpha}} 
 \sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j k(\vec{x_i},\vec{x_j})) \newline
 \sum_l a_i y_i = 0
 \end{cases}
