@@ -1,4 +1,5 @@
 ---
+title: 'Home'
 name: "vitor frois"
 imgname: 
   name: "content/img/main.jpg"

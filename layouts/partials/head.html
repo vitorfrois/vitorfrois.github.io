@@ -5,6 +5,9 @@
   {{ $css := "css/reset.css" | relURL }}
   {{ $css := "css/monospace.css" | relURL }}
   <link rel="stylesheet" href="{{ $css }}">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico?v=2">
+
+  <title>{{ .Title }} </title>
   {{ $title := print .Title " | " .Site.Title }}
   
   {{ if not .IsNode }}
