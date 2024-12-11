@@ -1,0 +1,39 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  {{ hugo.Generator }}
+  {{ $css := "css/reset.css" | relURL }}
+  {{ $css := "css/monospace.css" | relURL }}
+  <link rel="stylesheet" href="{{ $css }}">
+  {{ $title := print .Title " | " .Site.Title }}
+  
+  {{ if not .IsNode }}
+  <table class="header">
+    <tr>
+      <th colspan="4">
+        <h1 class="title"> {{ .Site.Title }} </h1>
+        <span class="subtitle"> Personal Blog </span>
+      </th>
+    </tr>
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td colspan="3"> {{ .Title }} </td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td class="width-min" colspan="3">{{ partial "date.html" . }}</td>
+      </tr>
+    </tbody>
+  </table>
+  {{ else }}
+  <table class="header">
+    <tr>
+      <th colspan="2">
+        <h1 class="title"> {{ .Site.Title }} </h1>
+        <span class="subtitle"> Personal Blog </span>
+      </th>
+    </tr>
+  </table>
+  {{ end }}
+</head>

@@ -114,7 +114,7 @@ In a similar way, the **decision rule also depends only on the dot product of th
 After all these calculations Vapnik certainly hesitated a little and think if he was going in the right direction. Only almost 30 years later, researchers found the ideia of a kernel, allowing the model to surpass linearity.
 
 ## Kernel
-A general way to deal with linearity of a vector $\vec{u}: \R^m$ is to create a function $\phi(x): \R^m \rarr \R^n$ with $n \ge m$ where the new coordinates $\phi(u)$ will be given by non-linear functions. This process can be very heavy to process, especially in numerous dimensions.
+A general way to deal with linearity of a vector $\vec{u}: R^m$ is to create a function $\phi(x): R^m \rightarrow R^n$ with $n \ge m$ where the new coordinates $\phi(u)$ will be given by non-linear functions. This process can be very heavy to process, especially in numerous dimensions.
 
 Altough, as seen in previous calculations, optimizing and classifying only need the result of $u\cdot v$ or $\phi(u)\cdot \phi(v)$. And there the Kernel Trick appears! *We do not need a $\phi$ function*, we just a function that gives the result of $\phi(u)\phi(v)$. This function is called the kernel function, and is represented by $k$.
 
@@ -128,7 +128,7 @@ $$
 k(u, v) = (u \cdot v)^n
 $$
 ### Radial Basis Function Kernel
-The Radial Basis Function (RBF), generalizes the Polynomial Kernel and gives the relation between these two vectors in infinite dimensions $k_{RBF}: R^m\rarr R^\infty$
+The Radial Basis Function (RBF), generalizes the Polynomial Kernel and gives the relation between these two vectors in infinite dimensions $k_{RBF}: R^m\rightarrow R^\infty$
 $$
 k(u,v)=\exp{(-\lambda ||\vec{u} \cdot \vec{v}||)}
 $$
@@ -143,7 +143,7 @@ $$
 where $\vec{\alpha}$ solves
 $$
 \begin{cases}
-\argmax_{\vec{\alpha}} 
+\text{argmax}_{\vec{\alpha}} 
 \sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j k(\vec{x_i},\vec{x_j})) \newline
 \sum_l a_i y_i = 0
 \end{cases}
