@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="generator" content="Hugo 0.139.3">
+  
+  
+  <link rel="stylesheet" href="/css/monospace.css">
+  
+  
+  <title> | Vítor Fróis</title>
+</head>
+
+  <body>
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+    
+    
+    <a class="nav-link" href="/"><i data-feather="home"></i> Home</a>
+  
+    
+    
+    <a class="nav-link" href="/blog/"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a class="nav-link" href="/tags/"><i data-feather="tag"></i> Tags</a>
+  
+  </nav>
+</div>
+
+    <div class="container">
+      <main id="main">
+       
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [["$$","$$"],["\\(","\\)"]]} })
+</script>
+</script>
+
+<h1></h1>
+
+
+<i data-feather="calendar"></i> <time datetime="0001-01-01">Jan 1, 0001</time>
+
+
+
+<br><br>
+<h1 id="transfer-learning">Transfer Learning</h1>
+<p>Vamos começar por um exemplo. Algumas pessoas sabem tocar um
+instrumento muito bem, suponha que seja o Violino, e, quando tentam
+aprender um novo instrumento de cordas, tem mais facilidade em relação a
+outras pessoas que nunca foram expostas a instrumentos musicais antes.
+Por que isso acontece? O nosso cerébro aprende sobre o instrumento,
+ritmo, configuração das cordas e assim fica mais fácil generalizar o
+conhecimento para outros instrumentos.</p>
+<h2 id="o-que-é-transfer-learning">O que é Transfer Learning?</h2>
+<p>De forma similar com as pessoas que aprenderam a tocar piano, as
+máquinas também tem várias formas de aprender e guardar esse
+conhecimento. Seria muito útil se pudessemos reutilizar o conhecimento
+adquirido de alguma forma. Transfer Learning é uma área de Aprendizado
+de Máquina que estuda como reutilizar experiências prévias de modelos
+para novas propostas. É necessário que esse conhecimento seja
+útil/relacionado de alguma forma com a nova proposta.</p>
+<figure>
+<img src="image.png" alt="transfer learning" />
+<figcaption aria-hidden="true">transfer learning</figcaption>
+</figure>
+<h2 id="vantagens-de-aplicar-métodos-de-transfer-learning">Vantagens de
+aplicar métodos de Transfer Learning</h2>
+<p>Pode diminuir seus custos computacionais, pegada de carbono, permitir
+utilizar modelos estado-da-arte sem precisar treinar do zero além de
+permitir o treinamento de modelos com um volume limitado de dados.</p>
+<h2 id="matematiquês">Matematiquês</h2>
+<p>Vamos definir algumas coisas que serão úteis:</p>
+<ul>
+<li>Domínio <span class="math inline">\(D\)</span> é representado por um
+espaço de features <span class="math inline">\(X\)</span> e uma
+distribuição de probabilidade</li>
+<li>Tarefa <span class="math inline">\(T\)</span> é definida por um
+espaço de rótulos <span class="math inline">\(Y\)</span> e uma função
+preditiva <span class="math inline">\(f(.)\)</span></li>
+</ul>
+<h3 id="definição-de-tl">Definição de TL</h3>
+<p>Dado um domínio <span class="math inline">\(D_s\)</span> e uma tarefa
+correspondente <span class="math inline">\(T_s\)</span>, um domínio
+objetivo <span class="math inline">\(D_t\)</span> e uma tarefa objetiva
+<span class="math inline">\(T_t\)</span>, TL busca incrementar o
+aprendizado em <span class="math inline">\(D_t\)</span> com informações
+obtidas de <span class="math inline">\(D_s\)</span> e <span
+class="math inline">\(T_s\)</span>, em que <span
+class="math inline">\(D_t \ne D_s\)</span> ou <span
+class="math inline">\(T_t \ne T_s\)</span>. Ufa!</p>
+<h2
+id="exemplo-para-esclarecer-definição-de-classes-gramaticais">Exemplo
+para esclarecer: definição de classes gramaticais</h2>
+<p>POS tagging é o nome de um processo que define classes gramaticais
+com a parte correspondente de um trecho de um texto baseado na definição
+da palavra e sua definição. Por exemplo, na frase ‘Eu sou feliz no
+Brasil’. Eu é Pronome, sou é verbo, feliz é adjetivo e assim por
+diante.</p>
+<p>Assuma que temos um dataset em Espanhol e um Dataset em
+Português.</p>
+<h3 id="x_t-ne-x_s"><span class="math inline">\(X_t \ne
+X_s\)</span></h3>
+<p>Digamos que queremos fazer definição de classes gramaticais em
+documentos brasileiros (em PT). Assumindo que Espanhol e Português são
+línguas semelhantes, podemos utilizar o conhecimento de ricos datasets
+em Espanhol para essa tarefa, apesar de que o nosso espaço de features
+seja totalmente diferente.</p>
+<h3 id="px_t-ne-px_s"><span class="math inline">\(P(X_t) \ne
+P(X_s)\)</span></h3>
+<p>Agora que imagine que precisamos fazer definição de classes em livros
+de receitas utilizando o nosso dataset em PT. Por mais que esses
+documentos estejam escritos na mesma língua, eles possuem o foco em
+tópicos diferentes, então a distribuição e frequência das palavras será
+diferente. Eu espero que a palavra farinha apareça muito mais nas
+receitas do que no dataset de forma geral.</p>
+<h3 id="y_t-ne-y_s"><span class="math inline">\(Y_t \ne
+Y_s\)</span></h3>
+<p>Suponha que desejamos classificar os textos do nosso dataset entre
+políticos ou não, porém já existe uma separação utilizando as classes
+textos jornalísticos ou literários. Dessa forma podemos reaproveitar o
+conhecimento para aumentar a acurácia da nova proposta.</p>
+<h2 id="tipos-de-transfer-learning">Tipos de Transfer Learning</h2>
+<h3 id="baseado-em-instância">Baseado em Instância</h3>
+<p>Esse método busca reponderar as amostras no domínio de origem para
+corrigir diferenças de distribuição. Isso ajuda o modelo a aprender
+apenas informações relevantes do domínio de origem e funciona melhor
+quando ambas distribuições pertencem ao mesmo domínio.</p>
+<p>Uma forma de fazer isso é dar maior importância a amostras do domínio
+de origem que sejam mais similares a amostras do domínio de destino.</p>
+<h3 id="baseado-em-features">Baseado em Features</h3>
+<p>De forma similar, busca reduzir a diferença entre as distribuições do
+domínio origem e destino através de uma transformação. Aqui, qualquer
+transformação pode ser realizada, por exemplo, para um espaço latente de
+dimensão menor, que pososui distribuição marginal mais parecida entre os
+domínios. Algo como aprendizado de representação.</p>
+<h3 id="baseado-em-parâmetros">Baseado em Parâmetros</h3>
+<p>Busca transferir o conhecimento através de reaproveitar parâmetros
+dos modelos de origem. O exemplo mais comum é fine-tuning.</p>
+<h3 id="referências">Referências</h3>
+<ul>
+<li><a
+href="https://medium.com/georgian-impact-blog/transfer-learning-part-1-ed0c174ad6e7">Georgian
+Impact - Transfer Learning</a></li>
+<li>A Survey on Transfer Learning, Sinno Pan and Qiang Yang</li>
+</ul>
+
+
+
+
+      </main>
+    </div>
+    <script src="/static/js/index.js"></script>
+  </body>
+</html>
+

@@ -1,14 +1,10 @@
 {{ define "main" }}
-    {{ partial "head.html" . }}
-    {{ partial "info.html" . }}
-    {{ .Content }}
-    {{ with .Params.Publications }}
-        <h2 id="publications">Publications</h2>
-    {{ end }}
-    {{ range .Params.Publications }}
-        {{ partial "publication.html" . }}
-    {{ end }}
-    {{ range .Params.Publications }}
-    {{ partial "modal_publication.html" . }}
-    {{ end }}
+
+{{ partial "info.html" }}
+<div id="home-jumbotron" class="jumbotron text-center">
+  <!-- <h1>{{ .Site.Title }}</h1> -->
+  <p class="font-125">{{ .Site.Params.homeText }}</p>
+  {{ .Content }}
+</div>
+
 {{ end }}

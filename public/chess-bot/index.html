@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+    <table style="table-layout: fixed; margin-bottom: -2px;">
+      <tbody>
+        <tr>
+          
+          
+          
+          <td><a class="nav-link" href="/"><i data-feather="home"></i> Home</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/blog/"><i data-feather="edit"></i> Blog</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/tags/"><i data-feather="tag"></i> Tags</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/resume/resume.pdf"><i data-feather="resume"></i> Resume</a></td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </nav>
+</div>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="generator" content="Hugo 0.139.3">
+  
+  
+  <link rel="stylesheet" href="/css/monospace.css">
+  
+  
+  
+  <table class="header">
+    <tr>
+      <th colspan="4">
+        <h1 class="title"> Vítor Fróis </h1>
+        <span class="subtitle"> Personal Blog </span>
+      </th>
+    </tr>
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td colspan="3"> Creating a Chess Bot </td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td class="width-min" colspan="3">
+
+<i data-feather="calendar"></i> <time datetime="2023-12-26">Dec 26, 2023</time>
+
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</head>
+  <body>
+    <div class="container">
+      <main id="main">
+       
+
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [["$$","$$"],["\\(","\\)"]]} })
+</script>
+</script>
+
+<main>
+    
+    <p>Unite two passions like chess and computers is an old hobby that
+started long time ago when I created an website to agregate chess info
+around the net. There was a long time ago, and having the opportunity to
+make another project involving chess make me curious.</p>
+<p>The youtuber <a
+href="https://www.youtube.com/c/SebastianLague">Sebastian Lague</a>
+developed a challenge between its followers with the objective of
+creating the most powerful Chess Bot within a limit of characters in C#.
+Together with some university colleagues, we created the <a
+href="https://github.com/icmc-data/tiny-chess-bots">Saint Charles
+Bot</a> (named after our campus city).</p>
+<p>But the bot did not work as expected. Fitting a Neural Network, our
+main goal, into the limit of 2048 tokens proposed by Sebastian turned
+out to be a pain. In the end, we sent a simple version of the bot just
+for fun. The story did not end there, tough. After the challenge, we
+trascribed the code to Python to create Pyrarucu. Its name is based on
+the powerful chess bots Rybka, Stockfish, which references fishes, with
+a touch of brasility. You can challenge it for a game at <a
+href="https://lichess.org/@/Pyrarucu">Lichess</a>.</p>
+<p>In this post, I want to give a idea of the main challenges and tips
+of building a chess bot with machine learning.</p>
+<h4 id="dataset">Dataset</h4>
+<p>In this project I choosen to work with supervised learning
+techniques. The dataset <a
+href="https://www.kaggle.com/datasets/ronakbadhe/chess-evaluations">Chess
+Evaluations</a> have millions of <a
+href="https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation">FEN</a>
+positions with theier respective analizys by a strong chess computer <a
+href="https://stockfishchess.org/">Stockfish</a> which will work as
+training data for my Neural Network.</p>
+<h4 id="bitboard">Bitboard</h4>
+<p>A bitboard is a very common way of storing bits in computer games,
+where each bit represents a piece or a space. In our case, the bitboard
+is a tool that helps produce a vector representation of the Chess
+board.</p>
+<p>There are 12 different types of pieces in the game, including the
+white pawn, the white bishop, … and the black king. Thus, each piece can
+receive its representation in bitboards, which is a vector of size 64
+(there is a space for each square on the board) and receives the value 1
+if the piece is located there and 0 otherwise.</p>
+<figure>
+<img src="../img/bitboard.gif" alt="../img/bitboard.gif" />
+<figcaption aria-hidden="true">../img/bitboard.gif</figcaption>
+</figure>
+<h4 id="evaluation-function-and-neural-network">Evaluation Function and
+Neural Network</h4>
+<p>Put it simple, an analysis function is a function that given an board
+state, returns a number that indicates the advantages of each side. If
+the value is positive, white pieces have an advantage and vice
+versa.</p>
+<figure>
+<img src="../img/evaluation.png" alt="evaluation" />
+<figcaption aria-hidden="true">evaluation</figcaption>
+</figure>
+<p>Each entry of the dataset has an evaluation by Stockfish and we
+should create a network that better approximate its behaviour.</p>
+<p>Initially, we transform the FEN positions in bitboards. With a vector
+of bitboards and respecitive evaluations, we can train a neural network
+and use it as our analysis function.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df[<span class="st">&#39;FEN&#39;</span>].<span class="bu">apply</span>(fen_to_bit_array).to_list()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">&#39;Evaluation&#39;</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>reg <span class="op">=</span> MLPRegressor().fit(X, Y)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>reg.predict(X_test)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">0.07698299</span></span></code></pre></div>
+<h4 id="search-function">Search Function</h4>
+<p>With the evaluation function in hands, we should find a way of making
+the better move. To do so, we create a tree, where the root node is the
+current position and each edge is a move that leads to a different
+position.</p>
+<figure>
+<img src="../img/minmax.png" alt="minmax" />
+<figcaption aria-hidden="true">minmax</figcaption>
+</figure>
+<p>This way, we should search for the move that maximizes our advantage
+and minimizes the opponent. The algorithm that makes this search is
+called MinMax. Pyrarucu uses a improved version of MinMax that cuts from
+tree moves according to a lower and upper bound in a way that with less
+nodes to search, it runs faster.</p>
+<p>With these steps, we have a functional bot that receives a board
+state and replies with the best move. <em>Or at least his best
+move</em>. You can see the full code to <a
+href="https://github.com/icmc-data/Pyrarucu/">Pyrarucu at Github</a>. If
+you are interested in coding chess bots, I encourage you to take a look
+at <a href="https://www.chessprogramming.org/Main_Page">Chess
+Programming Wiki</a>, a repository of knowledge about everything we know
+about chess computer.</p>
+<h3 id="references">References</h3>
+<ol type="1">
+<li><a
+href="https://stanford.edu/~cpiech/cs221/apps/deepBlue.html">Stanford
+CS221</a></li>
+<li><a href="https://www.youtube.com/watch?v=_vqlIPDR2TU">Coding
+Adventure: Making a Better Chess Bot</a></li>
+</ol>
+
+</main>
+
+      </main>
+    </div>
+    <script src="/static/js/index.js"></script>
+  </body>
+  <footer class="footer container h-10 text-center mt-1">
+    <hr>
+    <ul class="pl-0 mt-1" style="text-align: center;">
+        <a href="https://github.com/vitorfrois/vitorfrois.github.io">Code</a>
+        <span class="ml-2">©  2024</span>
+    </ul>
+</footer>
+
+</html>
+

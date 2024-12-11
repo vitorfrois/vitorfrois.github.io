@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Physics on Vítor Fróis</title>
+    <link>http://localhost:1313/tags/physics/</link>
+    <description>Recent content in Physics on Vítor Fróis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes on Statistical Mechanics</title>
+      <link>http://localhost:1313/statistical_mechanics/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/statistical_mechanics/</guid>
+      <description>&lt;h1 id=&#34;lecture-i&#34;&gt;Lecture I&lt;/h1&gt;&#xA;&lt;p&gt;Isolated measures of a closed system can be done, but it sometimes&#xA;can have no utility. Imagine have the velocity of a particle in a room,&#xA;an ambiente with tons of particles. In these cases, it is better to have&#xA;statistical measures of a system. In this way, statistical mechanics can&#xA;be applied to solids, gases and other.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic-statistics&#34;&gt;Basic Statistics&lt;/h2&gt;&#xA;&lt;p&gt;We are going to study things in certain states &lt;span&#xA;class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;. This way, the probability of a state&#xA;can be defined as &lt;span class=&#34;math display&#34;&gt;\[&#xA;\lim_{N \rightarrow \infty} \dfrac{N_i}{N_{total}}&#xA;\]&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

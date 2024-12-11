@@ -1,6 +1,12 @@
 {{ define "main" }}
-    {{ .Content }}
-    {{ range .Pages }}
-        {{ partial "list-item.html" . }}
-    {{ end }}
+
+<h1>{{ .Title }}</h1>
+{{ range .Pages.ByPublishDate.Reverse }}
+<p>
+  {{ partial "date.html" . }}
+  <a class="font-125" href="{{ .RelPermalink }}">{{ .Title }}</a>
+
+</p>
+{{ end }}
+
 {{ end }}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Support Vectors on Vítor Fróis</title>
+    <link>http://localhost:1313/tags/support-vectors/</link>
+    <description>Recent content in Support Vectors on Vítor Fróis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/support-vectors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Support Vectors</title>
+      <link>http://localhost:1313/support_vector/</link>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/support_vector/</guid>
+      <description>&lt;p&gt;Support Vectors are definetly one of my favorite ideias in Machine&#xA;Learning. It is such a simple concept, but when combined with some math,&#xA;turns into a powerful tool. Vladimir Vapnik came with the ideia of&#xA;Support Vectors in the middle of the 60’s, but only in 1992 a group of&#xA;scientists discovered a trick that could transform the linear model into&#xA;a nonlinear one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;support-vector-machines&#34;&gt;Support Vector Machines&lt;/h2&gt;&#xA;&lt;p&gt;Suppose that two linear separable classes lies in a space. To create&#xA;a model, we should find the best way to draw such a separation. Decision&#xA;trees, neural networks came with theier own ideia, but Support Vector&#xA;Machines (SVM) looks not for a line, but a lane that best does that&#xA;separation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

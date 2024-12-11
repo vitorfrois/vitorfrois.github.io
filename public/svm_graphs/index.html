@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+    <table style="table-layout: fixed; margin-bottom: -2px;">
+      <tbody>
+        <tr>
+          
+          
+          
+          <td><a class="nav-link" href="/"><i data-feather="home"></i> Home</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/blog/"><i data-feather="edit"></i> Blog</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/tags/"><i data-feather="tag"></i> Tags</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/resume/resume.pdf"><i data-feather="resume"></i> Resume</a></td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </nav>
+</div>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="generator" content="Hugo 0.139.3">
+  
+  
+  <link rel="stylesheet" href="/css/monospace.css">
+  
+  
+  
+  <table class="header">
+    <tr>
+      <th colspan="4">
+        <h1 class="title"> Vítor Fróis </h1>
+        <span class="subtitle"> Personal Blog </span>
+      </th>
+    </tr>
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td colspan="3"> Support Vector Machines para Classificação de Nós </td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td class="width-min" colspan="3">
+
+<i data-feather="calendar"></i> <time datetime="2024-10-30">Oct 30, 2024</time>
+
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</head>
+  <body>
+    <div class="container">
+      <main id="main">
+       
+
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [["$$","$$"],["\\(","\\)"]]} })
+</script>
+</script>
+
+<main>
+    
+    <h1 id="sumário">Sumário</h1>
+<ul>
+<li>Support Vector Machines (SVMs)</li>
+<li>Kernel Trick</li>
+<li>Formulação Final</li>
+<li>Como pensar em Kernel de nós e Diffusion Kernel</li>
+</ul>
+<h1 id="support-vector-machines-svms">Support Vector Machines
+(SVMs)</h1>
+<p>Support Vector Machines são uma das minhas ideias favoritas no
+contexto de Aprendizado de Máquina. É um conceito muito simples que
+combinado com matemática, se torna uma ferramenta poderosa. O cientista
+soviético Vladimir Vapnik trouxe a ideia original nos anos 60 mas apenas
+em 1992, um grupo de cientistias foram capazes de encontrar um truque
+que transformasse o modelo linear em não linear.</p>
+<p>Imagine duas classes separáveis que vivem em um espaço qualquer. Para
+criar um modelo, devemos encontrar a melhor maneira de separá-los.
+Enquanto Árvores de Decisão e Redes Neurais tem suas ideias, SVM buscam
+encontrar uma faixa que realize a melhor separação.</p>
+<figure>
+<img src="../img/svm_intro.png"
+alt="Xs e Os separados pela faixa verde" />
+<figcaption aria-hidden="true">Xs e Os separados pela faixa
+verde</figcaption>
+</figure>
+<p>A faixa tem duas bordas e nós queremos maximizar a distância entre
+elas.</p>
+<h2 id="regra-de-decisão">Regra de Decisão</h2>
+<p>Considere <span class="math inline">\(\vec{w}\)</span> um vetor
+perpendicular a faixa e considere que queremos classificar um novo
+exemplo <span class="math inline">\(\vec{u}\)</span>. Nosso objetivo é
+checar se <span class="math inline">\(\vec{u}\)</span> pertence ao lado
+direito ou esquerdo da faixa. Para tanto, nós devemos projetar <span
+class="math inline">\(\vec{u}\)</span> em <span
+class="math inline">\(\vec{w}\)</span></p>
+<figure>
+<img src="../img/svm.png" alt="Street gutters and \vec{w}" />
+<figcaption aria-hidden="true">Street gutters and <span
+class="math inline">\(\vec{w}\)</span></figcaption>
+</figure>
+<p>Assim, para classificar <span class="math inline">\(\vec{u}\)</span>
+entre classe 1 ou 2, checamos se <span class="math inline">\(\vec{w}
+\vec{u} \ge c\)</span>, onde <span class="math inline">\(c\)</span> is a
+constant. Considerando <span class="math inline">\(c=-b\)</span>,
+podemos escrever uma regra de decisão:</p>
+<blockquote>
+<p>Se <span class="math inline">\(\vec{w} \vec{u} + b \ge 0\)</span>
+então <span class="math inline">\(\vec{u}\)</span> pertence a classe
+1.</p>
+</blockquote>
+<p>Ótimo! Mas ainda não sabemos qual valor usar, então devemos
+introduzir algumas restrições (constraints) a fim de calcular <span
+class="math inline">\(\vec{w}\)</span> e <span
+class="math inline">\(b\)</span>. Considere <span
+class="math inline">\(x_1\)</span>, <span
+class="math inline">\(x_2\)</span> amostras de classe 1 e 2
+respectivamente. Assim, <span class="math display">\[
+\begin{cases}
+    \vec{w} \vec{x_1} + b \ge 1 \\\
+    \vec{w} \vec{x_2} + b \le 1
+\end{cases}
+\]</span></p>
+<p>Para conveniência introduzimos <span class="math inline">\(y\)</span>
+de forma que <span class="math display">\[
+\begin{cases}
+    x_1 \implies y_i = 1 \\\
+    x_2 \implies y_i = -1
+\end{cases}
+\]</span> Assim reescrevemos (1) com <span
+class="math inline">\(y_i\)</span> dos dois lados: <span
+class="math display">\[
+    y_i (\vec{w} \vec{x_i} + b) \ge 1
+\]</span> Note que amostras nas bordas da faixa tem <span
+class="math display">\[
+    y_i (\vec{w} \vec{x_i} + b) = 1
+\]</span></p>
+<h2 id="encontrando-a-faixa-mais-larga">Encontrando a faixa mais
+larga</h2>
+<figure>
+<img src="../img/gutter_samples.png" alt="Samples on the gutters" />
+<figcaption aria-hidden="true">Samples on the gutters</figcaption>
+</figure>
+<p>Sabendo a equação para amostras nas bordas, podemos encontrar a
+largura da faixa ao projetar a diferença entre os representantes de cada
+classe nas boardas pela vetor perpendicular a faixa normalizado.</p>
+<p>O vetor perpendicular que buscamos é <span
+class="math inline">\(\dfrac{\vec{w}}{||\vec{w}||}\)</span> e a
+diferença <span class="math inline">\((x_1 - x_2)\)</span>. Portanto, a
+largura da faixa é dada por <span class="math inline">\(\text{width} =
+\dfrac{\vec{w}}{||\vec{w}||}(x_1 - x_2)\)</span>.</p>
+<figure>
+<img src="../img/street_width.png" alt="Visualizing street width" />
+<figcaption aria-hidden="true">Visualizing street width</figcaption>
+</figure>
+<p>Reescrevendo (1) para amostras nas bordas obtemos <span
+class="math display">\[
+\begin{cases}
+    \vec{x_1} = \dfrac{1 - b}{\vec{w}} \\\
+    \vec{x_2} = - \dfrac{1 - b}{\vec{w}}
+\end{cases}
+\]</span></p>
+<p>E substituindo na fórmula da largura <span class="math display">\[
+    \text{width} = \dfrac{\vec{w}}{||\vec{w}||}(\dfrac{1 - b}{\vec{w}} +
+\dfrac{1 - b}{\vec{w}}) = \dfrac{2}{||\vec{w}||}
+\]</span></p>
+<p>Nós queremos maximizar a largura, isto é, maximizar <span
+class="math inline">\(\dfrac{2}{||\vec{w}||}\)</span>. De forma mais
+conveniente, podemos minimizar <span
+class="math inline">\(\dfrac{1}{2}||\vec{w}||^2\)</span>.</p>
+<h2 id="otimização-com-multiplicadores-de-lagrange">Otimização com
+Multiplicadores de Lagrange</h2>
+<p>Para minimizar <span
+class="math inline">\(\dfrac{1}{2}||\vec{w}||^2\)</span> com as
+restrições <span class="math inline">\(y_i (\vec{w} \vec{x_i} + b) - 1
+\ge 0\)</span> (as quais garantem que cada amostra estará do lado
+correto) podemos utilizar Multiplicadores de Lagrange. O Lagrangiano é
+uma expressão da forma <span class="math inline">\(L(x, \lambda) = f(x)
+- \lambda g(x)\)</span>. O valor mínimo é encontrado quando pegamos as
+derivadas parciais e igualamos a 0. <span class="math display">\[
+    L = \dfrac{1}{2}||\vec{w}||^2 - \sum_l a_i (y_i (\vec{x_i}\vec{w} +
+b) - 1)
+\]</span> Introduzimos <span class="math inline">\(\alpha s\)</span>
+para cada amostra. A soma é realizada sobre o conjunto de amostras <span
+class="math inline">\(l\)</span>.</p>
+<blockquote>
+<p>Note que <span class="math inline">\(\frac{\partial
+||\vec{w}||}{\partial \vec{w}} =
+\frac{\vec{w}}{||\vec{w}||}\)</span>.</p>
+</blockquote>
+<p>Ao pegar as derivadas parciais obtemos <span class="math display">\[
+\dfrac{\partial{L}}{\partial{\vec{w}}} = \vec{w} - \sum_l a_i y_i
+\vec{x_i} = 0 \implies \vec{w} = \sum_l a_i y_i \vec{x_i} \\\
+\dfrac{\partial{L}}{\partial{b}} = \sum_l a_i y_i = 0
+\]</span></p>
+<p>Resumindo, encontramos que o vetor <span
+class="math inline">\(\vec{w}\)</span> é uma combinação linear das
+amostras. Podemos substituir as expressões obtidas em L para encontrar:
+$$ L = (_l a_i y_i ) (_l a_j y_j ) - (_l a_i y_i ) (_l a_j y_j ) + _l
+a_i</p>
+<p>\<br />
+L = _l a_i - (_l a_i a_j y_i y_j ) $$</p>
+<p>Finalmente! O mais importante aqui é descobrirmos que <strong>a
+otimização depende apenas do produto escalar dos pares de
+amostras</strong> (<span class="math inline">\(\vec{x_i}
+\vec{x_j}\)</span>).</p>
+<p>Podemos inserir o vetor obtido para a faixa <span
+class="math inline">\(\vec{w} = \sum_l a_i y_i \vec{x_i}\)</span> para
+encontrar uma nova regra de decisão:</p>
+<blockquote>
+<p>Se <span class="math inline">\(\sum_l a_i y_i \vec{x_i} \vec{u} + b
+\ge 0\)</span> então <span class="math inline">\(\vec{u}\)</span>
+pertence a classe 1.</p>
+</blockquote>
+<p>De forma similar, a <strong>regra de decisão também depende apenas do
+produto escalar entre o vetor desconhecido e as amostras</strong>.</p>
+<p><strong>Nota 1</strong>: é possível provar que o Lagrangiano pertence
+a um espaço convexo, e portanto, o máximo local também é global.</p>
+<p><strong>Nota 2</strong>: as amostras com <span
+class="math inline">\(\alpha_i \ne 0\)</span> serão aquelas nas bordas
+da faixa.</p>
+<h2 id="kernel">Kernel</h2>
+<p>Uma forma comum para lidar com a linearidade de um vetor <span
+class="math inline">\(\vec{u}: R^m\)</span> é criar uma função <span
+class="math inline">\(\phi(x): R^m R^n\)</span> com <span
+class="math inline">\(n \ge m\)</span> em que as novas coordenadas <span
+class="math inline">\(\phi(u)\)</span> serão dadas por funções não
+lineares. Esse processo pode ser computacionalmente pesado,
+especialmente em altas dimensões.</p>
+<p>Entretanto, como visto nos últimos parágrafos, para otimizar e
+classificar precisamos apenas do resultado de <span
+class="math inline">\(u\cdot v\)</span> ou <span
+class="math inline">\(\phi(u)\cdot \phi(v)\)</span>. O Kernel Trick é
+que nós <em>não precisamos de uma função <span
+class="math inline">\(\phi\)</span></em>, apenas de uma função que
+calcule o resultado de <span
+class="math inline">\(\phi(u)\phi(v)\)</span>. Essa função é o kernel,
+representado pela letra <span class="math inline">\(k\)</span>.</p>
+<p><span class="math display">\[
+k(u,v)=\phi(u)\phi(v)
+\]</span></p>
+<h3 id="kernel-rbf">Kernel RBF</h3>
+<p>O Kernel Radial Basis Function (RBF), generaliza um kernel polinomial
+para gerar a <a
+href="https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf">relação
+entre vetores num espaço de dimensão infinita</a>: <span
+class="math display">\[
+k(u,v)=\exp{(-\lambda ||\vec{u} \cdot \vec{v}||)}
+\]</span></p>
+<h2 id="formulação-final">Formulação Final</h2>
+<p>Considere um conjunto de amostras <span
+class="math inline">\(x\)</span>, um kernel <span
+class="math inline">\(k\)</span>. Uma nova amostra <span
+class="math inline">\(\vec{u}\)</span> é classificada usando</p>
+<p><span class="math display">\[
+\text{sgn}(\sum_l a_i y_i k(\vec{x_i}, \vec{u}) + b)
+\]</span></p>
+<p>onde <span class="math inline">\(\vec{\alpha}\)</span> resolve</p>
+<p><span class="math display">\[
+\begin{cases}
+\argmin_{\vec{\alpha}}
+\sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j k(\vec{x_i},\vec{x_j}))
+\newline
+\sum_l a_i y_i = 0
+\end{cases}
+\]</span></p>
+<h2 id="inferência-em-grafos">Inferência em Grafos</h2>
+<p>Em ciência de dados, os dados podem estar estruturados como nós de um
+grafo e não como vetores. Isso pode acontecer naturalmente, pela
+discretização de um espaço contínuo ou por que é conveniente.</p>
+<p>Para aplicar SVMs em grafos, é preciso encontrar um <span
+class="math inline">\(k(u, v)\)</span> entre os nós.</p>
+<h3 id="matriz-de-adjacência">Matriz de Adjacência</h3>
+<p>Não é um kernel válido :( Podemos encontrar vários problemas. Um
+exemplo muito claro é que nem todos vértices podem ser diretamente
+alcançáveis.</p>
+<h3 id="difusão-em-grafos">Difusão em Grafos</h3>
+<p>Para resolver esse problema, utilizamos a difusão em grafos. A
+difusão é um processo amplamente conhecido na física e pode ser
+interpretado como o espalhamento de uma substância quando introduzido em
+um meio.</p>
+<p>Na versão para grafos, a difusão pode ser considerada como um RBF em
+grafos e representa caminhadas aleatórias em tempo contínuo. <span
+class="math display">\[
+K=\exp (\Delta)
+\]</span></p>
+<p>onde <span class="math inline">\(\Delta\)</span> é o Laplaciano da
+matriz de adjacência.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=efR1C6CvhmE&amp;">StatQuest
+on SVM</a></li>
+<li><a href="https://www.youtube.com/watch?v=_PwhiWxHK8o">Patrick
+Winston Lecture on SVM</a></li>
+<li><a
+href="https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf">RBF
+kernel as a projection into infinite dimensions</a></li>
+<li><a href="https://www.cs.toronto.edu/~duvenaud/cookbook/">The Kernel
+Cookbook</a></li>
+<li><a
+href="https://members.cbio.mines-paristech.fr/~jvert/talks/040206insead/insead.pdf">Inference
+on Graphs</a></li>
+<li><a
+href="https://people.cs.uchicago.edu/~risi/papers/KondorVert04.pdf">Diffusion
+Kernels</a></li>
+</ul>
+
+</main>
+
+      </main>
+    </div>
+    <script src="/static/js/index.js"></script>
+  </body>
+  <footer class="footer container h-10 text-center mt-1">
+    <hr>
+    <ul class="pl-0 mt-1" style="text-align: center;">
+        <a href="https://github.com/vitorfrois/vitorfrois.github.io">Code</a>
+        <span class="ml-2">©  2024</span>
+    </ul>
+</footer>
+
+</html>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markov Chains on Vítor Fróis</title>
+    <link>http://localhost:1313/tags/markov-chains/</link>
+    <description>Recent content in Markov Chains on Vítor Fróis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/markov-chains/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monte Carlo Markov Chains and the Metropolis Algorithm</title>
+      <link>http://localhost:1313/mcmc/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mcmc/</guid>
+      <description>&lt;h2 id=&#34;montes-claros-monte-carlo-method&#34;&gt;&lt;del&gt;Montes Claros&lt;/del&gt; Monte&#xA;Carlo method&lt;/h2&gt;&#xA;&lt;p&gt;When talking about stochastic experiments, it is important to know&#xA;different realizations can lead to different final results. Monte Carlo&#xA;method proposes to repeat the experiment and measure the average between&#xA;them.&lt;/p&gt;&#xA;&lt;p&gt;If we throw a dice, the expected value is 3.5. Altough, in a single&#xA;realization, this could not be the result. After throwing a dice a&#xA;million times and averaging the obtained values, we should come to a&#xA;result equal to the theoretical one.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

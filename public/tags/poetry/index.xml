@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Poetry on My New Hugo Site</title>
+    <link>http://localhost:1313/tags/poetry/</link>
+    <description>Recent content in Poetry on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jan 2019 23:24:54 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/poetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>That it will never come again by Emily Dickinson</title>
+      <link>http://localhost:1313/teste2/</link>
+      <pubDate>Sat, 12 Jan 2019 23:24:54 -0600</pubDate>
+      <guid>http://localhost:1313/teste2/</guid>
+      <description>&lt;p&gt;That it will never come again&#xA;Is what makes life so sweet.&#xA;Believing what we don&amp;rsquo;t believe&#xA;Does not exhilarate.&lt;/p&gt;&#xA;&lt;p&gt;That if it be, it be at best&#xA;An ablative estate &amp;ndash;&#xA;This instigates an appetite&#xA;Precisely opposite.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>If by Rudyard Kipling</title>
+      <link>http://localhost:1313/teste/</link>
+      <pubDate>Sat, 12 Jan 2019 22:14:57 -0600</pubDate>
+      <guid>http://localhost:1313/teste/</guid>
+      <description>&lt;p&gt;If you can keep your head when all about you&#xA;Are losing theirs and blaming it on you,&#xA;If you can trust yourself when all men doubt you,&#xA;But make allowance for their doubting too;&#xA;If you can wait and not be tired by waiting,&#xA;Or being lied about, don&amp;rsquo;t deal in lies,&#xA;Or being hated, don&amp;rsquo;t give way to hating,&#xA;And yet don&amp;rsquo;t look too good, nor talk too wise:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

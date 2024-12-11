@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vítor Fróis</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Vítor Fróis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transfer Learning</title>
+      <link>http://localhost:1313/transfer_learning/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/transfer_learning/</guid>
+      <description>&lt;p&gt;Vamos começar por um exemplo. Algumas pessoas sabem tocar um&#xA;instrumento muito bem, suponha que seja o Violino, e, quando tentam&#xA;aprender um novo instrumento de cordas, tem mais facilidade em relação a&#xA;outras pessoas que nunca foram expostas a instrumentos musicais antes.&#xA;Por que isso acontece? O nosso cerébro aprende sobre o instrumento,&#xA;ritmo, configuração das cordas e assim fica mais fácil generalizar o&#xA;conhecimento para outros instrumentos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;o-que-é-transfer-learning&#34;&gt;O que é Transfer Learning?&lt;/h2&gt;&#xA;&lt;p&gt;De forma similar com as pessoas que aprenderam a tocar piano, as&#xA;máquinas também tem várias formas de aprender e guardar esse&#xA;conhecimento. Seria muito útil se pudessemos reutilizar o conhecimento&#xA;adquirido de alguma forma. Transfer Learning é uma área de Aprendizado&#xA;de Máquina que estuda como reutilizar experiências prévias de modelos&#xA;para novas propostas. É necessário que esse conhecimento seja&#xA;útil/relacionado de alguma forma com a nova proposta.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Support Vector Machines para Classificação de Nós</title>
+      <link>http://localhost:1313/svm_graphs/</link>
+      <pubDate>Wed, 30 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/svm_graphs/</guid>
+      <description>&lt;h1 id=&#34;sumário&#34;&gt;Sumário&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Support Vector Machines (SVMs)&lt;/li&gt;&#xA;&lt;li&gt;Kernel Trick&lt;/li&gt;&#xA;&lt;li&gt;Formulação Final&lt;/li&gt;&#xA;&lt;li&gt;Como pensar em Kernel de nós e Diffusion Kernel&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;support-vector-machines-svms&#34;&gt;Support Vector Machines&#xA;(SVMs)&lt;/h1&gt;&#xA;&lt;p&gt;Support Vector Machines são uma das minhas ideias favoritas no&#xA;contexto de Aprendizado de Máquina. É um conceito muito simples que&#xA;combinado com matemática, se torna uma ferramenta poderosa. O cientista&#xA;soviético Vladimir Vapnik trouxe a ideia original nos anos 60 mas apenas&#xA;em 1992, um grupo de cientistias foram capazes de encontrar um truque&#xA;que transformasse o modelo linear em não linear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Notes on Statistical Mechanics</title>
+      <link>http://localhost:1313/statistical_mechanics/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/statistical_mechanics/</guid>
+      <description>&lt;h1 id=&#34;lecture-i&#34;&gt;Lecture I&lt;/h1&gt;&#xA;&lt;p&gt;Isolated measures of a closed system can be done, but it sometimes&#xA;can have no utility. Imagine have the velocity of a particle in a room,&#xA;an ambiente with tons of particles. In these cases, it is better to have&#xA;statistical measures of a system. In this way, statistical mechanics can&#xA;be applied to solids, gases and other.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic-statistics&#34;&gt;Basic Statistics&lt;/h2&gt;&#xA;&lt;p&gt;We are going to study things in certain states &lt;span&#xA;class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;. This way, the probability of a state&#xA;can be defined as &lt;span class=&#34;math display&#34;&gt;\[&#xA;\lim_{N \rightarrow \infty} \dfrac{N_i}{N_{total}}&#xA;\]&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monte Carlo Markov Chains and the Metropolis Algorithm</title>
+      <link>http://localhost:1313/mcmc/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mcmc/</guid>
+      <description>&lt;h2 id=&#34;montes-claros-monte-carlo-method&#34;&gt;&lt;del&gt;Montes Claros&lt;/del&gt; Monte&#xA;Carlo method&lt;/h2&gt;&#xA;&lt;p&gt;When talking about stochastic experiments, it is important to know&#xA;different realizations can lead to different final results. Monte Carlo&#xA;method proposes to repeat the experiment and measure the average between&#xA;them.&lt;/p&gt;&#xA;&lt;p&gt;If we throw a dice, the expected value is 3.5. Altough, in a single&#xA;realization, this could not be the result. After throwing a dice a&#xA;million times and averaging the obtained values, we should come to a&#xA;result equal to the theoretical one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Support Vectors</title>
+      <link>http://localhost:1313/support_vector/</link>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/support_vector/</guid>
+      <description>&lt;p&gt;Support Vectors are definetly one of my favorite ideias in Machine&#xA;Learning. It is such a simple concept, but when combined with some math,&#xA;turns into a powerful tool. Vladimir Vapnik came with the ideia of&#xA;Support Vectors in the middle of the 60’s, but only in 1992 a group of&#xA;scientists discovered a trick that could transform the linear model into&#xA;a nonlinear one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;support-vector-machines&#34;&gt;Support Vector Machines&lt;/h2&gt;&#xA;&lt;p&gt;Suppose that two linear separable classes lies in a space. To create&#xA;a model, we should find the best way to draw such a separation. Decision&#xA;trees, neural networks came with theier own ideia, but Support Vector&#xA;Machines (SVM) looks not for a line, but a lane that best does that&#xA;separation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creating a Chess Bot</title>
+      <link>http://localhost:1313/chess-bot/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chess-bot/</guid>
+      <description>&lt;p&gt;Unite two passions like chess and computers is an old hobby that&#xA;started long time ago when I created an website to agregate chess info&#xA;around the net. There was a long time ago, and having the opportunity to&#xA;make another project involving chess make me curious.&lt;/p&gt;&#xA;&lt;p&gt;The youtuber &lt;a&#xA;href=&#34;https://www.youtube.com/c/SebastianLague&#34;&gt;Sebastian Lague&lt;/a&gt;&#xA;developed a challenge between its followers with the objective of&#xA;creating the most powerful Chess Bot within a limit of characters in C#.&#xA;Together with some university colleagues, we created the &lt;a&#xA;href=&#34;https://github.com/icmc-data/tiny-chess-bots&#34;&gt;Saint Charles&#xA;Bot&lt;/a&gt; (named after our campus city).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hello World!</title>
+      <link>http://localhost:1313/hello-world/</link>
+      <pubDate>Mon, 25 Dec 2023 13:10:41 -0300</pubDate>
+      <guid>http://localhost:1313/hello-world/</guid>
+      <description>&lt;p&gt;Hello everyone!&lt;/p&gt;&#xA;&lt;p&gt;This is the first post on my beloved blog. I want to use it as a tool&#xA;to study a little bit of web development and share projects I am working&#xA;at the University and alone.&lt;/p&gt;&#xA;&lt;p&gt;Hope you enjoy!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
+      <description>&lt;!doctype html&gt;&#xA;&lt;html lang=&#34;en&#34;&gt;&#xA;  &lt;script src=&#34;http://localhost:1313/livereload.js?mindelay=10&amp;amp;v=2&amp;amp;port=1313&amp;amp;path=livereload&#34; data-no-instant defer&gt;&lt;/script&gt;&lt;div id=&#34;nav-border&#34; class=&#34;container&#34;&gt;&#xA;  &lt;nav id=&#34;nav&#34; class=&#34;nav justify-content-center&#34;&gt;&#xA;    &lt;table style=&#34;table-layout: fixed; margin-bottom: -2px;&#34;&gt;&#xA;      &lt;tbody&gt;&#xA;        &lt;tr&gt;&#xA;          &#xA;          &#xA;          &#xA;          &lt;td&gt;&lt;a class=&#34;nav-link&#34; href=&#34;http://localhost:1313/&#34;&gt;&lt;i data-feather=&#34;home&#34;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/td&gt;&#xA;          &#xA;          &#xA;          &#xA;          &lt;td&gt;&lt;a class=&#34;nav-link&#34; href=&#34;http://localhost:1313/blog/&#34;&gt;&lt;i data-feather=&#34;edit&#34;&gt;&lt;/i&gt; Blog&lt;/a&gt;&lt;/td&gt;&#xA;          &#xA;          &#xA;          &#xA;          &lt;td&gt;&lt;a class=&#34;nav-link&#34; href=&#34;http://localhost:1313/tags/&#34;&gt;&lt;i data-feather=&#34;tag&#34;&gt;&lt;/i&gt; Tags&lt;/a&gt;&lt;/td&gt;&#xA;          &#xA;        &lt;/tr&gt;&#xA;      &lt;/tbody&gt;&#xA;    &lt;/table&gt;&#xA;  &lt;/nav&gt;&#xA;&lt;/div&gt;&#xA;  &lt;head&gt;&#xA;  &lt;meta charset=&#34;utf-8&#34;&gt;&#xA;  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0, user-scalable=yes&#34; /&gt;&#xA;  &lt;meta name=&#34;generator&#34; content=&#34;Hugo 0.139.3&#34;&gt;&#xA;  &#xA;  &#xA;  &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/monospace.css&#34;&gt;&#xA;  &#xA;  &#xA;  &#xA;  &lt;table class=&#34;header&#34;&gt;&#xA;    &lt;tr&gt;&#xA;      &lt;th colspan=&#34;4&#34;&gt;&#xA;        &lt;h1 class=&#34;title&#34;&gt; Vítor Fróis &lt;/h1&gt;&#xA;        &lt;span class=&#34;subtitle&#34;&gt; Personal Blog &lt;/span&gt;&#xA;      &lt;/th&gt;&#xA;    &lt;/tr&gt;&#xA;    &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;        &lt;th&gt;Title&lt;/th&gt;&#xA;        &lt;td colspan=&#34;3&#34;&gt; Resume &lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;        &lt;th&gt;Date&lt;/th&gt;&#xA;        &lt;td class=&#34;width-min&#34; colspan=&#34;3&#34;&gt;&#xA;&#xA;&lt;i data-feather=&#34;calendar&#34;&gt;&lt;/i&gt; &lt;time datetime=&#34;2024-03-15&#34;&gt;Mar 15, 2024&lt;/time&gt;&#xA;&#xA;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;    &lt;/tbody&gt;&#xA;  &lt;/table&gt;&#xA;  &#xA;&lt;/head&gt;&#xA;  &lt;body&gt;&#xA;    &lt;div class=&#34;container&#34;&gt;&#xA;      &lt;main id=&#34;main&#34;&gt;&#xA;       &#xA;&#xA;&lt;script type=&#34;text/javascript&#34;&#xA;    src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt;&lt;/script&gt;&#xA;&lt;/script&gt;&#xA;&lt;script type=&#34;text/x-mathjax-config&#34;&gt;&#xA;    MathJax.Hub.Config({ tex2jax: {inlineMath: [[&#34;$$&#34;,&#34;$$&#34;],[&#34;\\(&#34;,&#34;\\)&#34;]]} })&#xA;&lt;/script&gt;&#xA;&lt;/script&gt;&#xA;&#xA;&lt;main&gt;&#xA;    &#xA;    &#xA;&lt;body&gt;&#xA;    &lt;main class=&#34;content h-card container mt-2 m-auto leading-loose md:px-0 px-2 z-0&#34; role=&#34;main&#34;&gt;&#xA;        &lt;h2 class=&#34;sectionHead&#34;&gt;Summary&lt;/h2&gt;&#xA;        &lt;p class=&#34;cv-description&#34; style=&#34;font-size:.85rem&#34;&gt;&#xA;            &amp;nbsp;&#xA;            My academic experiences and skills have grown from my teenager hobbies: playing video games, chess and customizing my computer. During my teenage I joined Centro Federal de Educação Tecnológica (CEFET), a technical college in my city, where I obtained Electronics Technician diploma, competed in robotics tournaments and completed a scientific research on building a biometric system for CEFET&#39;s restaurant, all which grown my skills in team management, programming, electronics and mechanics.&#xA;            &lt;br&gt; &amp;nbsp;&#xA;            With the experience acquired at CEFET, I decided to start a Computer Science Bachelor at Universidade de São Paulo (USP), in which I could find myself growing as a professional and person. At USP I participated in DATA ICMC activities such as study groups, project and events and completed a scientific research on introduction to Complex Networks. During 2023, I had the opportunity to work as Data Engineer intern at Clave Capital, where I learned more about finances and had a great experience with the market.&#xA;            &lt;br&gt; &amp;nbsp;&#xA;            Currently, I am finishing the bachelor studies. I coordinate secretarial duties and participate at Deep Learning and Data Engineering study groups at DATA ICMC, contribute actively to Mesa Project open source library and conduct a scientific research in the convergence of complex systems and machine learning. I believe all activities which contribute to my comprehension of DevOps, ML theory and applied systems, and soft skill as group work, critical thinking, problem solving, public speaking and leadership.&#xA;        &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

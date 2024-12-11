@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+    <table style="table-layout: fixed; margin-bottom: -2px;">
+      <tbody>
+        <tr>
+          
+          
+          
+          <td><a class="nav-link" href="/"><i data-feather="home"></i> Home</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/blog/"><i data-feather="edit"></i> Blog</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/tags/"><i data-feather="tag"></i> Tags</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/resume/resume.pdf"><i data-feather="resume"></i> Resume</a></td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </nav>
+</div>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="generator" content="Hugo 0.139.3">
+  
+  
+  <link rel="stylesheet" href="/css/monospace.css">
+  
+  
+  
+  <table class="header">
+    <tr>
+      <th colspan="4">
+        <h1 class="title"> Vítor Fróis </h1>
+        <span class="subtitle"> Personal Blog </span>
+      </th>
+    </tr>
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td colspan="3"> Notes on Statistical Mechanics </td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td class="width-min" colspan="3">
+
+<i data-feather="calendar"></i> <time datetime="2024-10-18">Oct 18, 2024</time>
+
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</head>
+  <body>
+    <div class="container">
+      <main id="main">
+       
+
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [["$$","$$"],["\\(","\\)"]]} })
+</script>
+</script>
+
+<main>
+    
+    <h1 id="lecture-i">Lecture I</h1>
+<p>Isolated measures of a closed system can be done, but it sometimes
+can have no utility. Imagine have the velocity of a particle in a room,
+an ambiente with tons of particles. In these cases, it is better to have
+statistical measures of a system. In this way, statistical mechanics can
+be applied to solids, gases and other.</p>
+<h2 id="basic-statistics">Basic Statistics</h2>
+<p>We are going to study things in certain states <span
+class="math inline">\(i\)</span>. This way, the probability of a state
+can be defined as <span class="math display">\[
+\lim_{N \rightarrow \infty} \dfrac{N_i}{N_{total}}
+\]</span></p>
+<p>We can also specify the quantity associated with the state <span
+class="math inline">\(i\)</span> as <span
+class="math inline">\(F(i)\)</span>. Thus, the average value of this
+measure <span class="math inline">\(\langle F(i) \rangle\)</span> is the
+summation over all possible state times the corresponding probability:
+<span class="math inline">\(\sum_i F(i)P(i)\)</span>.</p>
+<h2 id="mechanics">Mechanics</h2>
+<h3 id="symmetry">Symmetry</h3>
+<p>Is an important characteristic of these systems. If present, we may
+use statistical mechanics to uncover final states. Elseway, we should do
+by experimenting.</p>
+<h3 id="conservation-of-energy">Conservation of Energy</h3>
+<p>System law’s can be represented as Markov Chains: you have a bunch of
+states and their transitions. More specifically, if the chain is
+irredutible, we can assure there is a conservation law. Else, there is
+loss of information.</p>
+<h3 id="entropy">Entropy</h3>
+<p>Entropy is measured over the number of states that has no null
+probability. <span class="math display">\[
+S = \log M
+\]</span> Where <span class="math inline">\(M\)</span> is the number of
+stationary states.</p>
+<p>A more general entropy formula is given by <span
+class="math display">\[
+S = - \sum_i P(i) \log(P(i))
+\]</span> <strong>Example</strong>: <span
+class="math inline">\(n\)</span> coins with equal probability (each coin
+can take two states) achieve <span class="math inline">\(2^n\)</span>
+possible states, and the total probability is <span
+class="math inline">\(S=n \log 2\)</span></p>
+<h2 id="boltzmann-distribution">Boltzmann Distribution</h2>
+<p>The Boltzmann distribution is found by minimizing entropy with
+respect to some constraints. It describes a system in equilibrium.</p>
+<p><span class="math display">\[
+-S(P_i) = \sum_i \log P_i = F(P_i)
+\]</span></p>
+<p>with respect to</p>
+<p><span class="math display">\[
+\sum_i P_i = 1 \text{ and } \sum_i P_iE_i = \langle E \rangle
+\]</span></p>
+<p>This is done using Lagrange Multipliers. Recover the <span
+class="math inline">\(F\)</span> above to write: <span
+class="math display">\[
+F + \alpha(\sum_i P_i - 1) + \beta(\sum_i P_i E_i - \langle E \rangle) =
+F&#39;(P_i)
+\]</span></p>
+<p><span class="math display">\[
+\sum_i \log P_i + \alpha(\sum_i P_i - 1) + \beta(\sum_i P_i E_i -
+\langle E \rangle) = F&#39;(P_i)
+\]</span></p>
+<p>For a specific <span class="math inline">\(i\)</span> we have <span
+class="math inline">\(\frac{\partial F}{\partial P_i} = \log P_i + 1 +
+\alpha + \beta E_i\)</span>. Now we equal this to 0, obtaining</p>
+<p><span class="math display">\[\log P_i + 1 + \alpha + \beta E_i =
+0\]</span> <span class="math display">\[\log P_i = -(1 + \alpha) - \beta
+E_i\]</span> <span class="math display">\[P_i =
+e^{-(1+\alpha)}e^{-(\beta E_i)}\]</span> The value <span
+class="math inline">\(z=e^{-(1+\alpha)}\)</span> is called the partition
+function, and finally we obtain <span class="math display">\[P_i =
+\dfrac{e^{-\beta E_i}}{z}\]</span></p>
+<p>We obtain a probability function where <span
+class="math inline">\(z\)</span> acts as a normalizing factor and <span
+class="math inline">\(\beta\)</span> has something you tune to change
+the average energy (below).</p>
+<p>As the temperature increases (yellow to red), all states start to
+become equally probable.</p>
+<figure>
+<img src="../img/boltzmann.png" alt="Boltzmann Distribution" />
+<figcaption aria-hidden="true">Boltzmann Distribution</figcaption>
+</figure>
+<h4 id="energy">Energy</h4>
+<p>We still have to discover unknown parameters. Lets use our
+constraints</p>
+<p><span class="math display">\[
+\sum_i P_i = \sum_i \dfrac{e^{-\beta E_i}}{z} \implies z(\beta) =
+e^{-\beta E_i}
+\]</span></p>
+<p>by differentiating <span class="math inline">\(z\)</span> with
+relation to <span class="math inline">\(\beta\)</span></p>
+<p><span class="math display">\[\frac{\partial z}{\partial \beta} = -
+\sum_i E_i \dfrac{e^{-\beta E_i}}{z}=\langle E \rangle\]</span></p>
+<p>So, it is possible to obtain the energy by deriving the partition
+function with respect to <span class="math inline">\(\beta\)</span>:</p>
+<p><span class="math display">\[
+E(\beta) = - \frac{\partial \log z}{\partial \beta}
+\]</span></p>
+<h4 id="beta">Beta</h4>
+<p><span class="math display">\[S = - \sum_i \dfrac{e^{-\beta E_i}}{z}
+[-\beta E_i - \log z] \]</span> thus <span class="math display">\[
+S = \beta \langle E \rangle + \dfrac{\log z}{z}\sum_i e^{-\beta E_i}
+\implies S = \beta \langle E \rangle + \log z(\beta)
+\]</span> Finally, deriving it gives <span class="math display">\[
+dS = \beta dE + Ed\beta + \dfrac{\partial \log z}{\partial \beta} d\beta
+\]</span> Last terms cancel out, giving <span class="math display">\[
+dS = \beta dE \implies T = \dfrac{1}{\beta}
+\]</span></p>
+
+</main>
+
+      </main>
+    </div>
+    <script src="/static/js/index.js"></script>
+  </body>
+  <footer class="footer container h-10 text-center mt-1">
+    <hr>
+    <ul class="pl-0 mt-1" style="text-align: center;">
+        <a href="https://github.com/vitorfrois/vitorfrois.github.io">Code</a>
+        <span class="ml-2">©  2024</span>
+    </ul>
+</footer>
+
+</html>
+

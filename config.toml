@@ -1,92 +1,46 @@
-[module]
-  [module.hugoVersion]
-    extended = true
-    min = "0.57.0"
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Vítor Fróis'
 
-# This is the configuration file for the example website of the Hugo theme
-# Astatine (see https://github.com/hugcis/hugo-astatine-theme).
-#
-# The URL from which the site will be served
-baseurl = "https://vitorfrois.github.io/"
-# Language used
-languageCode = "en-us"
-# Website title
-Title = "vitor frois"
-
-# Theme used
-theme = "hugo-astatine-theme"
-
-preserveTaxonomyNames = true
-rssLimit = 10
-paginate = 10
-
-# Code highlighting
-pygmentsCodefences = true
-pygmentsStyle = "native"
-
-# Taxonomies (only tags and categories are supported out of the box but you can
-# add more)
 [taxonomies]
-    category = "categories"  
-    tag = "tags"
+	tag = "tags"
 
-# Configure permalinks style
 [permalinks]
-    post = "/:slug/"
-    page = "/:slug/"
+	blog = "/:filename/"
 
-# Configure main navbar links. They can have a weight to select the order.
-# This links to content within the content/post/ folder
-[[menu.main]]
-    name = "posts"
-    url = "/post/"
-    weight = -150
-
-# Make the tags and categories pages accessible directly from the navbar.
-[[menu.main]]
-    name = "tags"
-    url = "/tags/"
-    weight = -130
-
-
-[[menu.main]]
-    name = "resume"
-    url = "/resume/resume.pdf"
-    weight = -120
-
-# This links to the page about.md
-[[menu.main]]
-    name = "about"
-    url = "/about/"
-    weight = -110
-
-
-[site]
-    title = 'vitor frois homepage'
-
-# Site wide params and SEO
 [params]
-    # Site description. Individual pages can have descriptions too but if
-    # missing it will fallback to that one.
-    description = """Vítor Fróis Homepage and Blog"""
-    # Author of the site
-    authorName = "vitor frois"
-    # Main image for the author. This will be the default image for SEO.
-    [params.imgname]
-        name = "img/main.jpg"
-        # Add an alt description for the image
-        alt = "Profile picture"
+	dateFormat = 'Jan 02, 2006'
 
-    # Indicate if you host Katex yourself. Defaults to using the CDN KaTex.
-    hostedKaTex = false
+[markup]
+	defaultMarkdownHandler = "pandoc"
+  [tableOfContents]
+    startLevel = 1
+    ordered = true
+    endLevel = 4
 
-    # Enable link to feed in footer
-    blogrss = true
-
-    [params.meta]
-    
+[security.exec]
+  allow = ['^pandoc$']
 
 
-# Sitemap location (default is /sitemap.xml)
-[sitemap]
-  filename = "sitemap.xml"
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    pre = "edit"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    name = "Tags"
+    pre = "tag"
+    url = "/tags/"
+    weight = 3
+  [[menu.main]]
+    name = "Resume"
+    pre = "resume"
+    url = "/resume/resume.pdf"
+    weight = 4
+

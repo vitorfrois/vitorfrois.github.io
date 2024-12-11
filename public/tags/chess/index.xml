@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chess on Vítor Fróis</title>
+    <link>http://localhost:1313/tags/chess/</link>
+    <description>Recent content in Chess on Vítor Fróis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/chess/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Chess Bot</title>
+      <link>http://localhost:1313/chess-bot/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chess-bot/</guid>
+      <description>&lt;p&gt;Unite two passions like chess and computers is an old hobby that&#xA;started long time ago when I created an website to agregate chess info&#xA;around the net. There was a long time ago, and having the opportunity to&#xA;make another project involving chess make me curious.&lt;/p&gt;&#xA;&lt;p&gt;The youtuber &lt;a&#xA;href=&#34;https://www.youtube.com/c/SebastianLague&#34;&gt;Sebastian Lague&lt;/a&gt;&#xA;developed a challenge between its followers with the objective of&#xA;creating the most powerful Chess Bot within a limit of characters in C#.&#xA;Together with some university colleagues, we created the &lt;a&#xA;href=&#34;https://github.com/icmc-data/tiny-chess-bots&#34;&gt;Saint Charles&#xA;Bot&lt;/a&gt; (named after our campus city).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

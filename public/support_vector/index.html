@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+    <table style="table-layout: fixed; margin-bottom: -2px;">
+      <tbody>
+        <tr>
+          
+          
+          
+          <td><a class="nav-link" href="/"><i data-feather="home"></i> Home</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/blog/"><i data-feather="edit"></i> Blog</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/tags/"><i data-feather="tag"></i> Tags</a></td>
+          
+          
+          
+          <td><a class="nav-link" href="/resume/resume.pdf"><i data-feather="resume"></i> Resume</a></td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </nav>
+</div>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="generator" content="Hugo 0.139.3">
+  
+  
+  <link rel="stylesheet" href="/css/monospace.css">
+  
+  
+  
+  <table class="header">
+    <tr>
+      <th colspan="4">
+        <h1 class="title"> Vítor Fróis </h1>
+        <span class="subtitle"> Personal Blog </span>
+      </th>
+    </tr>
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td colspan="3"> Support Vectors </td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td class="width-min" colspan="3">
+
+<i data-feather="calendar"></i> <time datetime="2024-01-08">Jan 08, 2024</time>
+
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</head>
+  <body>
+    <div class="container">
+      <main id="main">
+       
+
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [["$$","$$"],["\\(","\\)"]]} })
+</script>
+</script>
+
+<main>
+    
+    <p>Support Vectors are definetly one of my favorite ideias in Machine
+Learning. It is such a simple concept, but when combined with some math,
+turns into a powerful tool. Vladimir Vapnik came with the ideia of
+Support Vectors in the middle of the 60’s, but only in 1992 a group of
+scientists discovered a trick that could transform the linear model into
+a nonlinear one.</p>
+<h2 id="support-vector-machines">Support Vector Machines</h2>
+<p>Suppose that two linear separable classes lies in a space. To create
+a model, we should find the best way to draw such a separation. Decision
+trees, neural networks came with theier own ideia, but Support Vector
+Machines (SVM) looks not for a line, but a lane that best does that
+separation.</p>
+<p>That lane has two gutters in a way we want to maximize the distance
+between them.</p>
+<h3 id="decision-rule">Decision Rule</h3>
+<p>Let <span class="math inline">\(\vec{w}\)</span> be a vector
+perpendicular to the lane and consider we want to classify an unknown
+example <span class="math inline">\(\vec{u}\)</span>. Our goal is to
+check if <span class="math inline">\(\vec{u}\)</span> belongs to the
+right or left side of the street. To achieve so, we should project <span
+class="math inline">\(\vec{u}\)</span> on <span
+class="math inline">\(\vec{w}\)</span></p>
+<figure>
+<img src="../img/svm.png" alt="Street gutters and \vec{w}" />
+<figcaption aria-hidden="true">Street gutters and <span
+class="math inline">\(\vec{w}\)</span></figcaption>
+</figure>
+<p>Thus, to classify <span class="math inline">\(\vec{u}\)</span> as
+class 1 or class 2, we should check if <span
+class="math inline">\(\vec{w} \vec{u} \ge c\)</span>, where <span
+class="math inline">\(c\)</span> is a constant. Considering <span
+class="math inline">\(c=-b\)</span>, we can finally write a decision
+rule:</p>
+<blockquote>
+<p>If <span class="math inline">\(\vec{w} \vec{u} + b \ge 0\)</span>
+then <span class="math inline">\(\vec{u}\)</span> belongs to class
+1.</p>
+</blockquote>
+<p>So good so far. But we still do not know which constant to use, so we
+can introduce some constraints and calculate <span
+class="math inline">\(\vec{w}\)</span> and <span
+class="math inline">\(b\)</span>. Consider <span
+class="math inline">\(x_1\)</span>, <span
+class="math inline">\(x_2\)</span> a class 1 and 2 vector sample
+respectively. <span class="math display">\[
+\begin{equation}
+\begin{cases}
+    \vec{w} \vec{x_1} + b \ge 1 \\\
+    \vec{w} \vec{x_2} + b \le 1
+\end{cases}
+\end{equation}
+\]</span></p>
+<p>For mathematical convenience we introduce <span
+class="math inline">\(y\)</span> such that <span class="math display">\[
+\begin{equation}
+\begin{cases}
+    x_1 \implies y_i = 1 \\\
+    x_2 \implies y_i = -1
+\end{cases}
+\end{equation}
+\]</span> Rewriting (1) with <span class="math inline">\(y_1\)</span> on
+both sides gives the same equation <span class="math display">\[
+    y_i (\vec{w} \vec{x_i} + b) \ge 1
+\]</span></p>
+<p>Notice that samples that lies on the gutters of the street have <span
+class="math display">\[
+    y_i (\vec{w} \vec{x_i} + b) = 1
+\]</span></p>
+<h2 id="calculating-the-widest-lane">Calculating the widest lane</h2>
+<p><img src="../img/gutter_samples.png" alt="Samples on the gutters" />
+Knowing the equality for samples on the gutters, we can find the width
+of the lane by projecting the diff vector (difference between each class
+representant on the gutter) by normalized vector perpendicular to the
+lane.</p>
+<p>The perpendicular vector we search for is <span
+class="math inline">\(\dfrac{\vec{w}}{||\vec{w}||}\)</span>, and the
+diff is <span class="math inline">\((x_1 - x_2)\)</span>. Then, the lane
+width is given by <span class="math inline">\(width =
+\dfrac{\vec{w}}{||\vec{w}||}(x_1 - x_2)\)</span></p>
+<figure>
+<img src="../img/street_width.png" alt="Visualizing street width" />
+<figcaption aria-hidden="true">Visualizing street width</figcaption>
+</figure>
+<p>Remembering (1) for samples on the gutters, we have <span
+class="math display">\[
+\begin{equation}
+\begin{cases}
+    \vec{x_1} = \dfrac{1 - b}{\vec{w}} \\\
+    \vec{x_2} = - \dfrac{1 - b}{\vec{w}}
+\end{cases}
+\end{equation}
+\]</span> Substituing on width formula <span class="math display">\[
+    width = \dfrac{\vec{w}}{||\vec{w}||}(\dfrac{1 - b}{\vec{w}} +
+\dfrac{1 - b}{\vec{w}}) \\\
+    width = \dfrac{2}{||\vec{w}||}
+\]</span> We want to maximize the width, this is, we want to maximize
+<span class="math inline">\(\dfrac{2}{||\vec{w}||}\)</span>. In a more
+convenient way, say that we want to minimize <span
+class="math inline">\(\dfrac{1}{2}||\vec{w}||^2\)</span>. Now we’re half
+way there.</p>
+<h2 id="optimizing-with-the-lagrangian">Optimizing with the
+Lagrangian</h2>
+<p>In order to minimize <span
+class="math inline">\(\dfrac{1}{2}||\vec{w}||^2\)</span> with
+constraints <span class="math inline">\(y_i (\vec{w} \vec{x_i} + b) - 1
+\ge 0\)</span> (those ensure each sample will be on the correct side of
+the lane) we can use Lagrangian Multipliers (what we should have learned
+in Calculus II). The Lagrangian is an expression of the form <span
+class="math inline">\(L(x, \lambda) = f(x) - \lambda g(x)\)</span>. And
+the maximum show up when we take the partial derivatives and equal them
+to 0. Let’s see <span class="math display">\[
+    L = \dfrac{1}{2}||\vec{w}||^2 - \sum_l a_i (y_i (\vec{x_i}\vec{w} +
+b) - 1)
+\]</span> We introduce multiplicative <span class="math inline">\(\alpha
+s\)</span> for each constraint. The summation iterates over the sample
+set <span class="math inline">\(l\)</span> and represents the function
+<span class="math inline">\(g\)</span>. Note that <span
+class="math inline">\(\frac{\partial ||\vec{w}||}{\partial \vec{w}} =
+\frac{\vec{w}}{||\vec{w}||}\)</span> Taking the partials, we obtain
+<span class="math display">\[
+\dfrac{\partial{L}}{\partial{\vec{w}}} = \vec{w} - \sum_l a_i y_i
+\vec{x_i} = 0 \implies \vec{w} = \sum_l a_i y_i \vec{x_i} \\\
+\dfrac{\partial{L}}{\partial{b}} = \sum_l a_i y_i = 0
+\]</span></p>
+<p>Summarizing, we discovered that vector <span
+class="math inline">\(\vec{w}\)</span> is a linear combination of the
+samples. Going further, we can substitute the obtained expressions into
+<span class="math inline">\(L\)</span>. <span class="math display">\[
+L = \dfrac{1}{2}(\sum_l a_i y_i \vec{x_i}) (\sum_l a_j y_j \vec{x_j}) -
+(\sum_l a_i y_i \vec{x_i}) (\sum_l a_j y_j \vec{x_j}) + \sum_l a_i \\\
+L = \sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j \vec{x_i}
+\vec{x_j})
+\]</span></p>
+<p>Finally! A analyst could be able to calculate the maximum of this
+expression, but most importantly, we discovered that <strong>the
+optimization depends only on the dot product of pairs of
+samples</strong> (<span class="math inline">\(\vec{x_i}
+\vec{x_j}\)</span>).</p>
+<p>We can plug the obtained lane vector <span
+class="math inline">\(\vec{w} = \sum_l a_i y_i \vec{x_i}\)</span> to
+find a new decision rule:</p>
+<blockquote>
+<p>If <span class="math inline">\(\sum_l a_i y_i \vec{x_i} \vec{u} + b
+\ge 0\)</span> then <span class="math inline">\(\vec{u}\)</span> belongs
+to class 1.</p>
+</blockquote>
+<p>In a similar way, the <strong>decision rule also depends only on the
+dot product of the unknown vector and the samples vectors</strong>.</p>
+<p><strong>Note 1:</strong> It is possible to prove that the Lagrangian
+gives a convex space, that is, the local maxima is also the global
+one.</p>
+<p><strong>Note 2:</strong> the constraints <span
+class="math inline">\(\alpha_i \ne 0\)</span> are going to be the ones
+related to samples that lie on the gutter of the street.</p>
+<p>After all these calculations Vapnik certainly hesitated a little and
+think if he was going in the right direction. Only almost 30 years
+later, researchers found the ideia of a kernel, allowing the model to
+surpass linearity.</p>
+<h2 id="kernel">Kernel</h2>
+<p>A general way to deal with linearity of a vector <span
+class="math inline">\(\vec{u}: R^m\)</span> is to create a function
+<span class="math inline">\(\phi(x): R^m \rightarrow R^n\)</span> with
+<span class="math inline">\(n \ge m\)</span> where the new coordinates
+<span class="math inline">\(\phi(u)\)</span> will be given by non-linear
+functions. This process can be very heavy to process, especially in
+numerous dimensions.</p>
+<p>Altough, as seen in previous calculations, optimizing and classifying
+only need the result of <span class="math inline">\(u\cdot v\)</span> or
+<span class="math inline">\(\phi(u)\cdot \phi(v)\)</span>. And there the
+Kernel Trick appears! <em>We do not need a <span
+class="math inline">\(\phi\)</span> function</em>, we just a function
+that gives the result of <span
+class="math inline">\(\phi(u)\phi(v)\)</span>. This function is called
+the kernel function, and is represented by <span
+class="math inline">\(k\)</span>.</p>
+<p><span class="math display">\[
+k(u,v)=\phi(u)\phi(v)
+\]</span></p>
+<h3 id="polynomial-function-homogeneous">Polynomial Function
+(homogeneous)</h3>
+<p>The Polynomial Function gives the relation between two vectors in
+<span class="math inline">\(n\)</span> dimensions. <span
+class="math display">\[
+k(u, v) = (u \cdot v)^n
+\]</span> ### Radial Basis Function Kernel The Radial Basis Function
+(RBF), generalizes the Polynomial Kernel and gives the relation between
+these two vectors in infinite dimensions <span
+class="math inline">\(k_{RBF}: R^m\rightarrow R^\infty\)</span> <span
+class="math display">\[
+k(u,v)=\exp{(-\lambda ||\vec{u} \cdot \vec{v}||)}
+\]</span></p>
+<p>There are <a href="https://github.com/gmum/pykernels">lots of
+different kernels</a> you can possibly test and use.</p>
+<h2 id="final-svm-formulation">Final SVM Formulation</h2>
+<p>Consider a sample set <span class="math inline">\(x\)</span>, a
+kernel <span class="math inline">\(k\)</span>. A new sample <span
+class="math inline">\(\vec{u}\)</span> is classified using <span
+class="math display">\[
+\text{sgn}(\sum_l a_i y_i k(\vec{x_i}, \vec{u}) + b)
+\]</span> where <span class="math inline">\(\vec{\alpha}\)</span> solves
+<span class="math display">\[
+\begin{cases}
+\text{argmax}_{\vec{\alpha}}
+\sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j k(\vec{x_i},\vec{x_j}))
+\newline
+\sum_l a_i y_i = 0
+\end{cases}
+\]</span></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=_PwhiWxHK8o">Patrick
+Winston Lecture on SVM</a></li>
+<li><a
+href="https://pages.cs.wisc.edu/~matthewb/pages/notes/pdf/svms/RBFKernel.pdf">RBF
+kernel as a projection into infinite dimensions</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/svm.html">SkLearn
+SVM</a></li>
+<li><a href="https://github.com/gmum/pykernels">PyKernels</a></li>
+<li><a href="https://www.cs.toronto.edu/~duvenaud/cookbook/">The Kernel
+Cookbook</a></li>
+<li><a href="https://www.youtube.com/watch?v=efR1C6CvhmE&amp;">StatQuest
+on SVM</a></li>
+<li><a
+href="http://i2pc.es/coss/Docencia/SignalProcessingReviews/Smola2004.pdf">Smola’s
+Tutorial on SVR</a></li>
+<li><a
+href="https://proceedings.neurips.cc/paper_files/paper/1996/file/d38901788c533e8286cb6400b40b386d-Paper.pdf">Support
+Vector Regression Machines</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vladimir_Vapnik">Vladimir
+Vapnik on Wikipedia</a></li>
+<li>https://www.svms.org/</li>
+</ul>
+
+</main>
+
+      </main>
+    </div>
+    <script src="/static/js/index.js"></script>
+  </body>
+  <footer class="footer container h-10 text-center mt-1">
+    <hr>
+    <ul class="pl-0 mt-1" style="text-align: center;">
+        <a href="https://github.com/vitorfrois/vitorfrois.github.io">Code</a>
+        <span class="ml-2">©  2024</span>
+    </ul>
+</footer>
+
+</html>
+

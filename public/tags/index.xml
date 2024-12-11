@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Vítor Fróis</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Vítor Fróis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artificial Inteligence</title>
+      <link>http://localhost:1313/tags/artificial-inteligence/</link>
+      <pubDate>Wed, 30 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/artificial-inteligence/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Ising</title>
+      <link>http://localhost:1313/tags/ising/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ising/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Phase Transition</title>
+      <link>http://localhost:1313/tags/phase-transition/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/phase-transition/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Physics</title>
+      <link>http://localhost:1313/tags/physics/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/physics/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Markov Chains</title>
+      <link>http://localhost:1313/tags/markov-chains/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/markov-chains/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Metropolis</title>
+      <link>http://localhost:1313/tags/metropolis/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/metropolis/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Monte Carlo</title>
+      <link>http://localhost:1313/tags/monte-carlo/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/monte-carlo/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Statistics</title>
+      <link>http://localhost:1313/tags/statistics/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/statistics/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>http://localhost:1313/tags/machine-learning/</link>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Support Vectors</title>
+      <link>http://localhost:1313/tags/support-vectors/</link>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/support-vectors/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Bot</title>
+      <link>http://localhost:1313/tags/bot/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bot/</guid>
+      <description>&#xA;</description>
+    </item>
+    <item>
+      <title>Chess</title>
+      <link>http://localhost:1313/tags/chess/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/chess/</guid>
+      <description>&#xA;</description>
+    </item>
+  </channel>
+</rss>
