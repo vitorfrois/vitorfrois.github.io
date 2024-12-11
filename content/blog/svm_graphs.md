@@ -151,7 +151,7 @@ onde $\vec{\alpha}$ resolve
 
 $$
 \begin{cases}
-\argmin_{\vec{\alpha}} 
+\text{argmin}_{\vec{\alpha}} 
 \sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j k(\vec{x_i},\vec{x_j})) \newline
 \sum_l a_i y_i = 0
 \end{cases}
