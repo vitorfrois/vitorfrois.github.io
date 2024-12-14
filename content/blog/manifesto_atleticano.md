@@ -1,11 +1,11 @@
-+++
-date = '2024-12-11'
-draft = false
-title = 'Manifesto Atleticano'
-slug = 'galo'
-tags = ['Galo']
-headline = 'Decidi escrever um pouco sobre futebol por que afinal só Computação cansa. Esse é meu Manifesto Atleticano'
-+++
+---
+date: '2024-12-11'
+draft: false
+title: 'Manifesto Atleticano'
+slug: 'galo'
+tags: ['Galo']
+headline: 'Decidi escrever um pouco sobre futebol por que afinal só Computação cansa. Esse é meu Manifesto Atleticano'
+---
 
 Decidi escrever um pouco sobre futebol por que afinal só Computação cansa. Esse é meu Manifesto Atleticano.
 

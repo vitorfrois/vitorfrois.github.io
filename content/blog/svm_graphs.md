@@ -1,13 +1,13 @@
-+++
-title = "Support Vector Machines para Classificação de Nós"
-date = "2024-10-30"
-draft = false
-slug = ''
-tags = ['Artificial Inteligence']
-headline = 'SVMs são modelos úteis pela sua explicabilidade e facilidade de uso. O objetivo é entender como o Kernel Trick pode ser utilizado para classificar nós em grafos.'
-readingtime = true
-katex = true
-+++
+---
+title: "Support Vector Machines para Classificação de Nós"
+date: "2024-10-30"
+draft: false
+slug: ''
+tags: ['Artificial Inteligence']
+headline: 'SVMs são modelos úteis pela sua explicabilidade e facilidade de uso. O objetivo é entender como o Kernel Trick pode ser utilizado para classificar nós em grafos.'
+readingtime: true
+katex: true
+---
 
 # Sumário 
 - Support Vector Machines (SVMs)

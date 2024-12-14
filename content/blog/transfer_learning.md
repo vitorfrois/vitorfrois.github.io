@@ -1,14 +1,14 @@
-+++
-title = "Transfer Learning"
-date = "2024-11-27"
-draft = false
-slug = ''
-categories = ['']
-tags = ['']
-headline = 'É tudo Fine-Tuning?'
-readingtime = true
-katex = true
-+++
+---
+title: "Transfer Learning"
+date: "2024-11-27"
+draft: false
+slug: ''
+categories: ['']
+tags: ['']
+headline: 'É tudo Fine-Tuning?'
+readingtime: true
+katex: true
+---
 
 Vamos começar por um exemplo. Algumas pessoas sabem tocar um instrumento muito bem, suponha que seja o Violino, e, quando tentam aprender um novo instrumento de cordas, tem mais facilidade em relação a outras pessoas que nunca foram expostas a instrumentos musicais antes. Por que isso acontece? O nosso cerébro aprende sobre o instrumento, ritmo, configuração das cordas e assim fica mais fácil generalizar o conhecimento para outros instrumentos.
 

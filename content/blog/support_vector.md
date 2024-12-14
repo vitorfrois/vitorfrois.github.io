@@ -1,13 +1,13 @@
-+++
-title = "Support Vectors"
-date = "2024-01-08"
-draft = false
-slug = 'svm'
-tags = ['Machine Learning', 'Support Vectors']
-headline = 'A short introduction about a very useful ideia in Machine Learning'
-readingtime = true
-katex = true
-+++
+---
+title: "Support Vectors"
+date: "2024-01-08"
+draft: false
+slug: 'svm'
+tags: ['Machine Learning', 'Support Vectors']
+headline: 'A short introduction about a very useful ideia in Machine Learning'
+readingtime: true
+katex: true
+---
 
 Support Vectors are definetly one of my favorite ideias in Machine Learning. It is such a simple concept, but when combined with some math, turns into a powerful tool. Vladimir Vapnik came with the ideia of Support Vectors in the middle of the 60's, but only in 1992 a group of scientists discovered a trick that could transform the linear model into a nonlinear one.
 

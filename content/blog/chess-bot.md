@@ -1,12 +1,12 @@
-+++
-title = "Creating a Chess Bot"
-date = "2023-12-26"
-draft = false
-slug = 'pyrarucu'
-tags = ['Machine Learning', 'Artificial Inteligence', 'Chess', 'Bot']
-headline = 'A story about chess bots and how I made mine'
-readingtime = true
-+++
+---
+title: "Creating a Chess Bot"
+date: "2023-12-26"
+draft: false
+slug: 'pyrarucu'
+tags: ['Machine Learning', 'Artificial Inteligence', 'Chess', 'Bot']
+headline: 'A story about chess bots and how I made mine'
+readingtime: true
+---
 
 Unite two passions like chess and computers is an old hobby that started long time ago when I created an website to agregate chess info around the net. There was a long time ago, and having the opportunity to make another project involving chess make me curious. 
 

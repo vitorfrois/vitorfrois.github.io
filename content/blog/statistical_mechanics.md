@@ -1,14 +1,15 @@
-+++
-title = "Notes on Statistical Mechanics"
-date = "2024-10-18"
-draft = false
-slug = 'statistical-mechanics'
-categories = ['notes']
-tags = ['physics', 'ising', 'phase transition']
-headline = 'Notes taken on Leonard Susskind Statistical Mechanics class'
-katex = true
-readingtime = true
-+++
+---
+title: "Notes on Statistical Mechanics"
+date: "2024-10-18"
+draft: false
+slug: 'statistical-mechanics'
+categories: ['notes']
+tags: ['physics', 'ising', 'phase transition']
+headline: 'Notes taken on Leonard Susskind Statistical Mechanics class'
+katex: true
+readingtime: true
+lua-filter: '/static/lua/tikz.lua'
+---
 
 # Lecture I
 Isolated measures of a closed system can be done, but it sometimes can have no utility. Imagine have the velocity of a particle in a room, an ambiente with tons of particles. In these cases, it is better to have statistical measures of a system. In this way, statistical mechanics can be applied to solids, gases and other.
@@ -75,7 +76,7 @@ We obtain a probability function where $z$ acts as a normalizing factor and $\be
 
 As the temperature increases (yellow to red), all states start to become equally probable.
 
-![Boltzmann Distribution](../img/boltzmann.png)
+![Boltzmann Distribution](../img/boltzmann.svg)
 
 #### Energy
 

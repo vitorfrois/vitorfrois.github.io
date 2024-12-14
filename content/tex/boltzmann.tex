@@ -1,0 +1,36 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\def\kB{1.38e-23} % Boltzmann constant
+\def\mu{1.66e-27} % unified atomic mass unit/Dalton (symbols: m_u or Da)
+
+\def\maxwellboltzmann#1{4 * pi * (\mu / (2 * pi * \kB * #1))^(3/2) * x^2 * exp(-\mu * x^2 / (2 * \kB * #1))}
+
+\begin{document}
+
+\pgfplotsset{axis line style={white}}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        domain = 0:8000,
+        xlabel = {$E(i)$},
+        ylabel = $P(i)$,
+        smooth, thick,
+        axis lines = left,
+        every tick/.style = {thick},
+        color=white
+      ]
+  
+      \addplot[color=yellow,samples=100]{\maxwellboltzmann{100}};
+  
+      \addplot[color=orange]{\maxwellboltzmann{300}};
+  
+      \addplot[color=red]{\maxwellboltzmann{1000}};
+  
+    \end{axis}
+\end{tikzpicture}
+
+\nopagecolor
+\end{document}
