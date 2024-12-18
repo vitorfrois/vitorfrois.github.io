@@ -101,10 +101,12 @@ $$
 $$
 
 Resumindo, encontramos que o vetor $\vec{w}$ é uma combinação linear das amostras. Podemos substituir as expressões obtidas em L para encontrar:
+
 $$
 L = \dfrac{1}{2}(\sum_l a_i y_i \vec{x_i}) (\sum_l a_j y_j \vec{x_j}) - (\sum_l a_i y_i \vec{x_i}) (\sum_l a_j y_j \vec{x_j}) + \sum_l a_i 
+$$
 
-\\\
+$$
 L = \sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j \vec{x_i} \vec{x_j})
 $$
 
@@ -124,7 +126,7 @@ De forma similar, a **regra de decisão também depende apenas do produto escala
 Uma forma comum para lidar com a linearidade de um vetor 
 $\vec{u}: R^m$
 é criar uma função 
-$\phi(x): R^m R^n$ 
+$\phi(x): R^m \rightarrow R^n$ 
 com $n \ge m$ em que as novas coordenadas $\phi(u)$ serão dadas por funções não lineares. Esse processo pode ser computacionalmente pesado, especialmente em altas dimensões.
 
 Entretanto, como visto nos últimos parágrafos, para otimizar e classificar precisamos apenas do resultado de $u\cdot v$ ou $\phi(u)\cdot \phi(v)$. O Kernel Trick é que nós *não precisamos de uma função $\phi$*, apenas de uma função que calcule o resultado de $\phi(u)\phi(v)$. Essa função é o kernel, representado pela letra $k$.
