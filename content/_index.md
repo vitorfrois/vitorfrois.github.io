@@ -2,7 +2,7 @@
 title: 'Home'
 name: "vitor frois"
 imgname: 
-  name: "content/img/main.jpg"
+  name: "content/img/main.png"
   alt: "Picture of me"
   type: image/jpg
 personal_title: "chess, python and coffee"
