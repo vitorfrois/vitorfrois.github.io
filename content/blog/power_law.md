@@ -1,6 +1,6 @@
 ---
 date: '2025-01-31T15:38:08-03:00'
-draft: false
+draft: true
 title: 'Power Law: a key for universality'
 slug: ''
 tags: ['']
