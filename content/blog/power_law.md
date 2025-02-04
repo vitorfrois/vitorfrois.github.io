@@ -122,11 +122,13 @@ If you live in a snowflake and never heard of fractals, they are geometric objec
 
 In the first we discussed how typical measures are centered around a mean value, like the human height. But what is the average size of a 'star' in the Koch curve above? Well, there are 'stars' of all different sizes, as we zoom in more 'stars' appears and that repeats infinitely.
 
-*"If a system is characterized by a Power Law distribution, it surely has a fractality. Bringing to our class examples, we can think about fractality on the Instagram follower graph. A very famous person like Lionel Messi is followed by other famous people."* He grabbed the remaining piece of chalk and fastly draw a network using circles and arrows. *"When we scale down the graph and look at a smaller account, like Jesse's Teahouse (@jessesteahouse), it is followed by a smaller number of people, some of which are famous. If we scale down it and analyze my personal account, I am followed only by a bunch of friends and probabily not a single celebrity. This pattern of followers repeat all over the network."*
+*"If a system is characterized by a Power Law distribution, it surely has a fractality. Bringing to our class examples, we can think about fractality on the Instagram follower graph. A very famous person like Lionel Messi is followed by other famous people."* He grabbed the remaining piece of chalk and fastly draw a network using circles and arrows. 
 
 ![The fractal-like Instagram follower network.](../img/twitter_graph.svg)
 
-*"It does not means, altough, that all systems that have a Power Law distribution are formed by the same process. However, they are pretty useful because of universality. In Physics, the set of systems characterized by a Power Law can be classified according to universality classes, all of which has the same exponents independent of other parameters and can be shown to have the same fundamental dynamics. This why Power Laws are so important for us."*
+*"When we scale down the graph and look at a smaller account, like Jesse's Teahouse (@jessesteahouse), it is followed by a smaller number of people, some of which are famous. If we scale down it and analyze my personal account, I am followed only by a bunch of friends and probabily not a single celebrity. This pattern of followers repeat all over the network in different scales."*
+
+*"It does not means, altough, that all systems that have a Power Law distribution are formed by the same process. However, they are pretty useful because of universality. In Physics, the set of systems characterized by a Power Law can be classified according to universality classes, all of which has the same exponents independent of other parameters and can be shown to have the same fundamental dynamics. This why Power Laws are so important for us."* We don't know dynamics and details from all those systems, but it is still exciting to know that many different organizations are related like this.
 
 It was a fascinating lesson. The professor said goodbye and left the room as we stared at the drawn network, thinking about Power Laws, universality and fractals. 
 
