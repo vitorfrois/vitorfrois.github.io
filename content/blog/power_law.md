@@ -1,7 +1,7 @@
 ---
 date: '2025-01-31T15:38:08-03:00'
 draft: false
-title: 'Power Law: a key for universality'
+title: "This isn't Normal: a Chronicle about Power Laws"
 slug: ''
 tags: ['']
 headline: ''
@@ -22,14 +22,14 @@ Additionally, it is important to notice that distributions with this kind of beh
 
 Distributions of this form follow a Power Law, which are the central theme of this post. The objective is to introduce Power Laws and convince you how Universal they are. 
 
-# An introduction to Universality
+# An introduction to Power Laws
 I remember very clearly the day I entered room 4-005 a couple of minutes late, sat at the back and started to listen professor Rodrigues talking about a thing called Universality. But wasn't he supposed to talk about networks? *"Anyway"*, he continued, *"the properties I'll show today are shared between a wide range of systems, from biological systems to the society. These organizations all have a thing in common: Power Laws."*
 
 Wow! This is really amazing. Imagine having a unique law to rule them all. 
 
 *"A really famous example involving Power Laws is the Protein Interaction Networks, where proteins interact with each other (of course!) in a way that a small fraction of proteins have a high number of interactions, while most of the proteins have a small number of interactions. In a similar manner, when we look to the topology of social networks like Twitter or Instagram we see a small proportion of influencers and famous people which got thousands or even millions of followers, at the same time that most of the users have a bunch of followers. Altough these systems are really different, they exhibit extraordinarily close behaviour."*
 
-I never imagined that proteins could be related to Twitter like this. The examples professor Rodrigues talked about in class aren't just a coincidence. They suggest that exists some kind of **universal** underlying process in those systems!
+I never imagined that proteins could be related to Twitter like this. The examples professor Rodrigues talked about in class aren't just a coincidence. They suggest that exists some kind of relation between those systems!
 
 *"Until now the text we discussed how universal power laws are. These organizations are present in physical, biological, technological and society systems of all kinds."* He then proceeded to show the two histograms I bring below.
 
@@ -51,7 +51,7 @@ Rodrigues got a pair of chalks and drew the cartesian coordinates and a curve on
 
 ![Power law graph](../img/power_law.svg)
 
-*"This graph has the form $p(x) = Cx ^{-\alpha}$, ruled by constants $\alpha$ and $c$ which defines rate of decrease and min value respectively."*
+*"This graph has the form $p(x) = Cx ^{-\alpha}$, ruled by the value $\alpha$, which is called the exponent of the Power Law and define the rate of decrease."*
 
 At this moment, almost like a foresight and before I could lift my hand, someone asked the question I was wondering about.
 
@@ -72,7 +72,8 @@ $$
 
 ![Power law on logarithmic scales](../img/power_law_log.svg)
 
-### More properties
+# Zooming In
+### Scale-free distributions, Fractals and Universality
 
 At the end of the class a group of five to six people gathered around the professor discussing extra topics, such as how Power Laws are scale-free. In the blackboard he wrote the distribution definition again:
 
@@ -80,13 +81,15 @@ $$
 p(x) = Cx ^{-\alpha}
 $$
 
-*"Imagine that we replace the $x$ with $kx$, where $k$ is a constant."*
+*"Imagine that we replace $x$ with $kx$, where $k$ is a constant."*
 
 $$
 p(kx) = k^{-\alpha} Cx ^{-\alpha} = k^{-\alpha} p(x)
 $$
 
-*"At the end, what we can see is that multiplying $x$ by a constant factor $k$ does not change the shape of the distribution. Instead, it only scale it differently."* We can visualize this by using Python. 
+*"At the end, what we can see is that multiplying $x$ by a constant factor $k$ does not change the shape of the distribution. Instead, it only scales differently."* 
+
+We can visualize this using Python. The code below creates two graphs of a Power Law $p(x)=0.61x^{-2}$ with different scales.
 
 #### Code
 ```python {.numberLines}
@@ -107,18 +110,32 @@ plot(f, 1, 10)
 plot(f, 1*k, 10*k)
 ```
 
-![Original Power Law distribution graph](../img/powerlaw10.png)
+![Original Power Law distribution graph.](../img/powerlaw10.png)
 
-![Power Law graph scaled by a factor of k=10](../img/powerlaw100.png)
+![Power Law graph scaled by a factor of k=10. Look at how the graph is exactly the same but axis marks are different.](../img/powerlaw100.png)
 
-"But not only that. Because of that self-similarity, Power Laws are related to Fractals." Shortly, Fractals are geometric objects that can be divided into smaller parts; each one of them is similar to the original object. "Fractals are self-similar, they repeat itself just like the scale-free distribution" 
+*"But not only that."* Rodrigues resumed. *"Because of that self-similarity, Power Laws are related to Fractals. Fractals are self-similar and they repeat itself just like the scale-free distribution"*
+ 
+If you live in a snowflake and never heard about fractals, they are geometric objects that can be divided into smaller parts; each one of them is similar to the original object. One shape is made of little shapes, that is made of little shapes, that... you got it!
 
 ![Koch Curve: as you zoom in, the pattern repeats itself.](../img/koch.gif){ width=200px, height=200px }
 
+In the first we discussed how typical measures are centered around a mean value, like the human height. But what is the average size of a 'star' in the Koch curve above? Well, there are 'stars' of all different sizes, as we zoom in more 'stars' appears and that repeats infinitely.
 
+*"If a system is characterized by a Power Law distribution, it surely has a fractality. Bringing to our class examples, we can think about fractality on the Instagram follower graph. A very famous person like Lionel Messi is followed by other famous people."* He grabbed the remaining piece of chalk and fastly draw a network using circles and arrows. *"When we scale down the graph and look at a smaller account, like Jesse's Teahouse (@jessesteahouse), it is followed by a smaller number of people, some of which are famous. If we scale down it and analyze my personal account, I am followed only by a bunch of friends and probabily not a single celebrity. This pattern of followers repeat all over the network."*
 
+![The fractal-like Instagram follower network.](../img/twitter_graph.svg)
 
-### Datasets
-- [Brazilian Cities](https://www.kaggle.com/datasets/crisparada/brazilian-cities)
-- [Web Links](from The number of links to web sites found in a 1997 web crawl of about 200 million web pages, represented as a simple histogram.)
-- [Moby Dick words](https://aaronclauset.github.io/powerlaws/data/words.txt)
+*"It does not means, altough, that all systems that have a Power Law distribution are formed by the same process. However, they are pretty useful because of universality. In Physics, the set of systems characterized by a Power Law can be classified according to universality classes, all of which has the same exponents independent of other parameters and can be shown to have the same fundamental dynamics. This why Power Laws are so important for us."*
+
+The professor said goodbye and left the room as we stared at the drawn network, thinking about Power Laws, universality, fractals and the relation with our world. 
+
+If you want to go deeper into the study of Power Laws you can check the references below.
+
+## References
+- [Power Laws, Pareto Distributions and Zipf's Law](https://arxiv.org/pdf/cond-mat/0412004)
+- [Power Law: Universality in Nature](https://francisco-rodrigues.medium.com/power-law-universality-in-nature-c933f271bda8)
+- [Complexity Explorer](https://www.youtube.com/@ComplexityExplorer)
+- [Brazilian Cities Dataset](https://www.kaggle.com/datasets/crisparada/brazilian-cities)
+- [Web Links Dataset](from The number of links to web sites found in a 1997 web crawl of about 200 million web pages, represented as a simple histogram.)
+- [Moby Dick words Dataset](https://aaronclauset.github.io/powerlaws/data/words.txt)
