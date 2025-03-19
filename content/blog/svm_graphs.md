@@ -28,7 +28,7 @@ A faixa tem duas bordas e nós queremos maximizar a distância entre elas.
 Considere $\vec{w}$ um vetor perpendicular a faixa e considere que queremos classificar um novo exemplo $\vec{u}$.
 Nosso objetivo é checar se $\vec{u}$ pertence ao lado direito ou esquerdo da faixa. Para tanto, nós devemos projetar $\vec{u}$ em $\vec{w}$
 
-![Street gutters and $\vec{w}$](../img/svm.png)
+![Street gutters and $\vec{w}$](../img/svm_lenght.png)
 
 Assim, para classificar $\vec{u}$ entre classe 1 ou 2, checamos se $\vec{w} \vec{u} \ge c$, onde $c$ is a constant. Considerando $c=-b$, podemos escrever uma regra de decisão:
 
@@ -61,13 +61,13 @@ $$
 
 ## Encontrando a faixa mais larga
 
-![Samples on the gutters](../img/gutter_samples.png)
+![Samples on the gutters](../img/svm_x1x2.png)
 
 Sabendo a equação para amostras nas bordas, podemos encontrar a largura da faixa ao projetar a diferença entre os representantes de cada classe nas boardas pela vetor perpendicular a faixa normalizado. 
 
 O vetor perpendicular que buscamos é $\dfrac{\vec{w}}{||\vec{w}||}$ e a diferença $(x_1 - x_2)$. Portanto, a largura da faixa é dada por $\text{width} = \dfrac{\vec{w}}{||\vec{w}||}(x_1 - x_2)$.
 
-![Visualizing street width](../img/street_width.png)
+![Visualizing street width](../img/svm_width.png)
 
 Reescrevendo (1) para amostras nas bordas obtemos
 $$

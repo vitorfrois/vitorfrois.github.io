@@ -20,7 +20,7 @@ That lane has two gutters in a way we want to maximize the distance between them
 Let $\vec{w}$ be a vector perpendicular to the lane and consider we want to classify an unknown example $\vec{u}$.
 Our goal is to check if $\vec{u}$ belongs to the right or left side of the street. To achieve so, we should project $\vec{u}$ on $\vec{w}$
 
-![Street gutters and $\vec{w}$](../img/svm.png)
+![Street gutters and $\vec{w}$](../img/svm_lenght.png)
 
 Thus, to classify $\vec{u}$ as class 1 or class 2, we should check if $\vec{w} \vec{u} \ge c$, where $c$ is a constant. Considering $c=-b$, we can finally write a decision rule:
 
@@ -57,12 +57,12 @@ $$
 $$
 
 ## Calculating the widest lane
-![Samples on the gutters](../img/gutter_samples.png)
+![Samples on the gutters](../img/svm_x1x2.png)
 Knowing the equality for samples on the gutters, we can find the width of the lane by projecting the diff vector (difference between each class representant on the gutter) by normalized vector perpendicular to the lane.
 
 The perpendicular vector we search for is $\dfrac{\vec{w}}{||\vec{w}||}$, and the diff is $(x_1 - x_2)$. Then, the lane width is given by $width = \dfrac{\vec{w}}{||\vec{w}||}(x_1 - x_2)$
 
-![Visualizing street width](../img/street_width.png)
+![Visualizing street width](../img/svm_width.png)
 
 Remembering (1) for samples on the gutters, we have 
 $$
