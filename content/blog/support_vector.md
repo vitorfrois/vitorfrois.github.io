@@ -1,6 +1,6 @@
 ---
-title: "Support Vectors"
-date: "2024-01-08"
+title: "I like Support Vector Machines so much"
+date: "2025-03-19"
 draft: false
 slug: 'svm'
 tags: ['Machine Learning', 'Support Vectors']
