@@ -20,7 +20,7 @@ Support Vector Machines são uma das minhas ideias favoritas no contexto de Apre
 
 Imagine duas classes separáveis que vivem em um espaço qualquer. Para criar um modelo, devemos encontrar a melhor maneira de separá-los. Enquanto Árvores de Decisão e Redes Neurais tem suas ideias, SVM buscam encontrar uma faixa que realize a melhor separação.
 
-![Xs e Os separados pela faixa verde](../img/svm_intro.png)
+![Xs e Os separados pela faixa verde](../img/svm_classifier.png)
 
 A faixa tem duas bordas e nós queremos maximizar a distância entre elas.
 
