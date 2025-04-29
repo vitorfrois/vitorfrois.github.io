@@ -1,5 +1,5 @@
 ---
-title: "I like Support Vector Machines so much"
+title: "Support Vector Machines"
 date: "2025-03-19"
 draft: false
 slug: 'svm'

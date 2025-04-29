@@ -16,6 +16,6 @@ address:
 
 Computers amazed me since I was a kid. Now I study them. 
 
-I am a Computer Science undergrad student at University of São Paulo (USP). I see the university as a great oportunity to meet amazing people and participate in wide variety of projects. Therefore, I currently work at USP data science extension group, [DATA](http://data.icmc.usp.br/), where we conduct presentations, classes and content about related topics. I also work as Scientific Research Intern, oriented by Francisco Rodrigues. This project uses Machine Learning to predict the steps required to reach stationary states in discrete-time social dynamics within complex networks, based on their topology. Our goal is to analyze the impact of topology in social dynamics.
+I am a Computer Science undergrad student at University of São Paulo (USP) and work as Content Engineer at [Briefer](https://briefer.cloud/blog/). I see the university as a great oportunity to meet amazing people and participate in a wide variety of projects. I coordinated activities at ML & DS Extension Group [DATA](http://data.icmc.usp.br/) that included presentations, events and seminars. I also work as Scientific Research Assistant with Francisco Rodrigues to predict influence of spreaders in complex systems.
 
 Besides the academic interests, my hobbies include playing chess, football, running and cooking. You can follow me at [Lichess](https://lichess.org/@/Chessfrois) and challenge me for a game. Unfortunately (or not) it is not possible yet to see me playing football.
