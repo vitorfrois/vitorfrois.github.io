@@ -19,6 +19,8 @@ title = 'Vítor Fróis'
     startLevel = 1
     ordered = true
     endLevel = 4
+  [highlight]
+    linenos = true
 
 [security.exec]
   allow = ['^pandoc$']
