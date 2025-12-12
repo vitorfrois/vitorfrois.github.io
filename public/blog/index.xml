@@ -6,8 +6,43 @@
     <description>Recent content in Blog on Vítor Fróis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Uncovering Black Box Models</title>
+      <link>http://localhost:1313/explainable_ai/</link>
+      <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/explainable_ai/</guid>
+      <description>&lt;p&gt;A life without questioning is not worth living. As Socrates famously&#xA;put it, the history of humanity is the history of questioning. From&#xA;physics to biology, from culinary arts to mathematics and even to&#xA;computation. In the century of Artificial Intelligence, we ask: how do&#xA;Machine Learning models work?&lt;/p&gt;&#xA;&lt;p&gt;Recently, Harvard Medical School researchers demonstrated that AI can&#xA;be used to &lt;a&#xA;href=&#34;https://hms.harvard.edu/news/new-artificial-intelligence-tool-cancer&#34;&gt;identify&#xA;cancer in patient pathology images&lt;/a&gt;. This is a huge advance which can&#xA;impact millions of lives. But these models often act like a black box,&#xA;making it practically impossible to fully understand their outputs.&#xA;Although, accuracy alone isn’t enough. If clinicians can’t understand&#xA;why an AI flags a malignancy, they can’t effectively fight it – the&#xA;situation becomes a shot in the dark.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visualizing the Bias-Variance tradeoff</title>
+      <link>http://localhost:1313/bias/</link>
+      <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/bias/</guid>
+      <description>&lt;p&gt;It’s not easy to find equilibrium between complex and simple when&#xA;training a Machine Learning model. This could be difference between a&#xA;million dollars loss and huge win or between classifying your pets&#xA;correctly. The explanations about Bias-Variance tradeoff never convinced&#xA;me, so I decided explain my own way: what’s really behind this&#xA;dilemma?&lt;/p&gt;&#xA;&lt;p&gt;Imagine everyday lots of dogs and cats pass through your window. Some&#xA;of them are big, some are small ones. You decide to investigate wheter&#xA;you could classify the pets using their heights and weights, so you take&#xA;measures for a bunch of animals. Cats are usually smaller and lighter.&#xA;Dogs are generally bigger or heavier.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Support Vector Machines</title>
+      <link>http://localhost:1313/support_vector/</link>
+      <pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/support_vector/</guid>
+      <description>&lt;p&gt;Support Vectors are definetly one of my favorite ideias in Machine&#xA;Learning. It is such a simple concept, but when combined with some math,&#xA;turns into a powerful tool. Vladimir Vapnik came with the ideia of&#xA;Support Vectors in the middle of the 60’s, but only in 1992 a group of&#xA;scientists discovered a trick that could transform the linear model into&#xA;a nonlinear one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;support-vector-machines&#34;&gt;Support Vector Machines&lt;/h2&gt;&#xA;&lt;p&gt;Suppose that two linear separable classes lies in a space. To create&#xA;a model, we should find the best way to draw such a separation. Decision&#xA;trees, neural networks came with theier own ideia, but Support Vector&#xA;Machines (SVM) looks not for a line, but a lane that best does that&#xA;separation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>This isn&#39;t Normal: a Chronicle about Power Laws</title>
+      <link>http://localhost:1313/power_law/</link>
+      <pubDate>Fri, 31 Jan 2025 15:38:08 -0300</pubDate>
+      <guid>http://localhost:1313/power_law/</guid>
+      <description>&lt;h1 id=&#34;this-isnt-normal&#34;&gt;This isn’t Normal&lt;/h1&gt;&#xA;&lt;p&gt;Most of the quantities we deal with daily are well defined around a&#xA;mean value. A simple example is the height of human beings. I would&#xA;guess the average Brazilian adult has 1.70m. Even if I miss the exact&#xA;value, I still have a good idea of how tall people are in general, and&#xA;I’m pretty sure I will not see anyone 30 cm or 500 km tall because as&#xA;far as I know people height follows a &lt;em&gt;Normal distribution&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Manifesto Atleticano</title>
+      <link>http://localhost:1313/manifesto_atleticano/</link>
+      <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/manifesto_atleticano/</guid>
+      <description>&lt;p&gt;Decidi escrever um pouco sobre futebol por que afinal só Computação&#xA;cansa. Esse é meu Manifesto Atleticano.&lt;/p&gt;&#xA;&lt;h1 id=&#34;de-dezembro-de-2024&#34;&gt;5 de Dezembro de 2024&lt;/h1&gt;&#xA;&lt;p&gt;Demitir o treinador nesse final de campeonato quando os resultados já&#xA;não importavam mais escancara o despreparo da diretoria. O Galo virou a&#xA;ideia de alguém que não sabe nada de futebol sobre um bom time, com&#xA;jogadores e identidade que não tem ligação nenhuma com a torcida.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Transfer Learning</title>
       <link>http://localhost:1313/transfer_learning/</link>
@@ -35,13 +70,6 @@
       <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/mcmc/</guid>
       <description>&lt;h2 id=&#34;montes-claros-monte-carlo-method&#34;&gt;&lt;del&gt;Montes Claros&lt;/del&gt; Monte&#xA;Carlo method&lt;/h2&gt;&#xA;&lt;p&gt;When talking about stochastic experiments, it is important to know&#xA;different realizations can lead to different final results. Monte Carlo&#xA;method proposes to repeat the experiment and measure the average between&#xA;them.&lt;/p&gt;&#xA;&lt;p&gt;If we throw a dice, the expected value is 3.5. Altough, in a single&#xA;realization, this could not be the result. After throwing a dice a&#xA;million times and averaging the obtained values, we should come to a&#xA;result equal to the theoretical one.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Support Vectors</title>
-      <link>http://localhost:1313/support_vector/</link>
-      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/support_vector/</guid>
-      <description>&lt;p&gt;Support Vectors are definetly one of my favorite ideias in Machine&#xA;Learning. It is such a simple concept, but when combined with some math,&#xA;turns into a powerful tool. Vladimir Vapnik came with the ideia of&#xA;Support Vectors in the middle of the 60’s, but only in 1992 a group of&#xA;scientists discovered a trick that could transform the linear model into&#xA;a nonlinear one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;support-vector-machines&#34;&gt;Support Vector Machines&lt;/h2&gt;&#xA;&lt;p&gt;Suppose that two linear separable classes lies in a space. To create&#xA;a model, we should find the best way to draw such a separation. Decision&#xA;trees, neural networks came with theier own ideia, but Support Vector&#xA;Machines (SVM) looks not for a line, but a lane that best does that&#xA;separation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Creating a Chess Bot</title>

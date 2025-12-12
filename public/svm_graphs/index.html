@@ -30,10 +30,13 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="generator" content="Hugo 0.139.3">
+  <meta name="generator" content="Hugo 0.145.0">
   
   
   <link rel="stylesheet" href="/css/monospace.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+
+  <title>Support Vector Machines para Classificação de Nós </title>
   
   
   
@@ -96,7 +99,7 @@ criar um modelo, devemos encontrar a melhor maneira de separá-los.
 Enquanto Árvores de Decisão e Redes Neurais tem suas ideias, SVM buscam
 encontrar uma faixa que realize a melhor separação.</p>
 <figure>
-<img src="../img/svm_intro.png"
+<img src="../img/svm_classifier.png"
 alt="Xs e Os separados pela faixa verde" />
 <figcaption aria-hidden="true">Xs e Os separados pela faixa
 verde</figcaption>
@@ -112,7 +115,7 @@ direito ou esquerdo da faixa. Para tanto, nós devemos projetar <span
 class="math inline">\(\vec{u}\)</span> em <span
 class="math inline">\(\vec{w}\)</span></p>
 <figure>
-<img src="../img/svm.png" alt="Street gutters and \vec{w}" />
+<img src="../img/svm_lenght.png" alt="Street gutters and \vec{w}" />
 <figcaption aria-hidden="true">Street gutters and <span
 class="math inline">\(\vec{w}\)</span></figcaption>
 </figure>
@@ -155,7 +158,7 @@ class="math display">\[
 <h2 id="encontrando-a-faixa-mais-larga">Encontrando a faixa mais
 larga</h2>
 <figure>
-<img src="../img/gutter_samples.png" alt="Samples on the gutters" />
+<img src="../img/svm_x1x2.png" alt="Samples on the gutters" />
 <figcaption aria-hidden="true">Samples on the gutters</figcaption>
 </figure>
 <p>Sabendo a equação para amostras nas bordas, podemos encontrar a
@@ -167,7 +170,7 @@ diferença <span class="math inline">\((x_1 - x_2)\)</span>. Portanto, a
 largura da faixa é dada por <span class="math inline">\(\text{width} =
 \dfrac{\vec{w}}{||\vec{w}||}(x_1 - x_2)\)</span>.</p>
 <figure>
-<img src="../img/street_width.png" alt="Visualizing street width" />
+<img src="../img/svm_width.png" alt="Visualizing street width" />
 <figcaption aria-hidden="true">Visualizing street width</figcaption>
 </figure>
 <p>Reescrevendo (1) para amostras nas bordas obtemos <span
@@ -212,11 +215,16 @@ class="math inline">\(l\)</span>.</p>
 \]</span></p>
 <p>Resumindo, encontramos que o vetor <span
 class="math inline">\(\vec{w}\)</span> é uma combinação linear das
-amostras. Podemos substituir as expressões obtidas em L para encontrar:
-$$ L = (_l a_i y_i ) (_l a_j y_j ) - (_l a_i y_i ) (_l a_j y_j ) + _l
-a_i</p>
-<p>\<br />
-L = _l a_i - (_l a_i a_j y_i y_j ) $$</p>
+amostras. Podemos substituir as expressões obtidas em L para
+encontrar:</p>
+<p><span class="math display">\[
+L = \dfrac{1}{2}(\sum_l a_i y_i \vec{x_i}) (\sum_l a_j y_j \vec{x_j}) -
+(\sum_l a_i y_i \vec{x_i}) (\sum_l a_j y_j \vec{x_j}) + \sum_l a_i
+\]</span></p>
+<p><span class="math display">\[
+L = \sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j \vec{x_i}
+\vec{x_j})
+\]</span></p>
 <p>Finalmente! O mais importante aqui é descobrirmos que <strong>a
 otimização depende apenas do produto escalar dos pares de
 amostras</strong> (<span class="math inline">\(\vec{x_i}
@@ -239,7 +247,7 @@ da faixa.</p>
 <h2 id="kernel">Kernel</h2>
 <p>Uma forma comum para lidar com a linearidade de um vetor <span
 class="math inline">\(\vec{u}: R^m\)</span> é criar uma função <span
-class="math inline">\(\phi(x): R^m R^n\)</span> com <span
+class="math inline">\(\phi(x): R^m \rightarrow R^n\)</span> com <span
 class="math inline">\(n \ge m\)</span> em que as novas coordenadas <span
 class="math inline">\(\phi(u)\)</span> serão dadas por funções não
 lineares. Esse processo pode ser computacionalmente pesado,
@@ -275,7 +283,7 @@ class="math inline">\(\vec{u}\)</span> é classificada usando</p>
 <p>onde <span class="math inline">\(\vec{\alpha}\)</span> resolve</p>
 <p><span class="math display">\[
 \begin{cases}
-\argmin_{\vec{\alpha}}
+\text{argmin}_{\vec{\alpha}}
 \sum_l a_i - \dfrac{1}{2}(\sum_l a_i a_j y_i y_j k(\vec{x_i},\vec{x_j}))
 \newline
 \sum_l a_i y_i = 0
@@ -332,7 +340,7 @@ Kernels</a></li>
     <hr>
     <ul class="pl-0 mt-1" style="text-align: center;">
         <a href="https://github.com/vitorfrois/vitorfrois.github.io">Code</a>
-        <span class="ml-2">©  2024</span>
+        <span class="ml-2">©  2025</span>
     </ul>
 </footer>
 
