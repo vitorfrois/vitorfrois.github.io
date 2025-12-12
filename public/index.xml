@@ -6,15 +6,8 @@
     <description>Recent content in Home on Vítor Fróis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Uncovering Black Box Models</title>
-      <link>http://localhost:1313/explainable_ai/</link>
-      <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/explainable_ai/</guid>
-      <description>&lt;p&gt;A life without questioning is not worth living. As Socrates famously&#xA;put it, the history of humanity is the history of questioning. From&#xA;physics to biology, from culinary arts to mathematics and even to&#xA;computation. In the century of Artificial Intelligence, we ask: how do&#xA;Machine Learning models work?&lt;/p&gt;&#xA;&lt;p&gt;Recently, Harvard Medical School researchers demonstrated that AI can&#xA;be used to &lt;a&#xA;href=&#34;https://hms.harvard.edu/news/new-artificial-intelligence-tool-cancer&#34;&gt;identify&#xA;cancer in patient pathology images&lt;/a&gt;. This is a huge advance which can&#xA;impact millions of lives. But these models often act like a black box,&#xA;making it practically impossible to fully understand their outputs.&#xA;Although, accuracy alone isn’t enough. If clinicians can’t understand&#xA;why an AI flags a malignancy, they can’t effectively fight it – the&#xA;situation becomes a shot in the dark.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Visualizing the Bias-Variance tradeoff</title>
       <link>http://localhost:1313/bias/</link>
